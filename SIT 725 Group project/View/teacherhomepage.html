@@ -1,11 +1,267 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teacher Homepage</title>
-</head>
-<body>
-    <h1>Welcome Tutor</h1>
-</body>
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Tutor Dashboard</title>
+      <link rel="stylesheet" href="/styles.css">
+      <link rel="stylesheet" href="/views.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   </head>
+   <body>
+      <nav class="navbar bg-darkblue ">
+         <div class="nav-container">
+            <a href="#" class="logo">TutorConnect</a>
+            <ul class="nav-links">
+               <li>
+                  <a href="#">
+                     Messages
+                     <div class="newmsg">1</div>
+                  </a>
+               </li>
+               <li><a href="#">My Profile</a></li>
+               <li><a href="/">Logout <i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
+               <li>My Tutor Dashboard <a class="btn-change bg-gray5" href="/student-homepage">Change</a></li>
+            </ul>
+         </div>
+      </nav>
+      <div class="home-container">
+         <div class="second-container">
+            <h3 class="title">Welcome back, {NAME}! </h3>
+            <section class="s-section img-7 border-radius">
+               <div class="s-container">
+                  <div class="">
+                     <h1> lessons yet!</h1>
+                     <p>Book your first session now!</p>
+                  </div>
+               </div>
+            </section>
+            <section>
+               <div class="sh-category">
+                  <h2 class="title">Category</h2>
+                  <div class="flex-container">
+                     <div class="cat-btn">Real World Analytics</div>
+                     <div class="cat-btn">Programming</div>
+                     <div class="cat-btn">Design</div>
+                     <div class="cat-btn">Math</div>
+                     <div class="cat-btn">Leadership</div>
+                  </div>
+               </div>
+            </section>
+            <section>
+               <div class="sh-category">
+                  <h2 class="title">Student Request(s)</h2>
+                  <div class="dropdown" id="dropdown">
+                     <div class="dropdown-btn" onclick="toggleDropdown()">Specialties <span id="counter">0</span></div>
+                     <div class="dropdown-content">
+                        <ul class="checkbox-list">
+                           <li>
+                              <label><input type="checkbox" class="checkbox" > Unit 1</label>
+                           </li>
+                           <li>
+                              <label><input type="checkbox" class="checkbox" > Unit 2</label>
+                           </li>
+                           <li>
+                              <label><input type="checkbox" class="checkbox"> Unit 3</label>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="flex-container">
+                     <div class="student-card">
+                        <div class="status">
+                           <div class="online pulseeffect-infi">
+                           </div>
+                        </div>
+                        <div class="profile">
+                           <img src="images/person2.png" alt="Profile Picture">
+                           <div>
+                              <div class="name">
+                                 {Tutor Name}
+                                 <div class="verified"></div>
+                              </div>
+                              <div class="title"> {Degree}</div>
+                           </div>
+                        </div>
+                        <div class="actions">
+                           <a href="#">View Profile</a>
+                           <a href="#">Send Message</a>
+                           <a href="#">Book Now!</a>
+                        </div>
+                     </div>
+                     <div class="student-card">
+                        <div class="status">
+                           <div class="online pulseeffect-infi">
+                           </div>
+                        </div>
+                        <div class="profile">
+                           <img src="images/person2.png" alt="Profile Picture">
+                           <div>
+                            <div class="ineedhelp-msg">"Hi, I'm looking for a tutor for CyberSecurity Management. Please message me."</div>
+                              <div class="name">
+                                 Donald G. 
+                                 <div class="verified"></div>
+                              </div>
+                             
+                           </div>
+                        </div>
+                        <div class="tags">
+                            
+                           <span>I need help with:</span>
+                            <div>
+                                <div class="tag">CyberSecurity</div>
+                                <div class="tag">Analytics</div>
+
+
+                            </div>
+                            </div>
+                       
+                        <div class="actions">
+                           <a href="#">View Profile</a>
+                           <a href="#">Message</a>
+                           <a href="#">Apply Now!</a>
+                        </div>
+                     </div>
+                     <div class="student-card">
+                        <div class="status">
+                           <div class="online pulseeffect-infi">
+                           </div>
+                        </div>
+                        <div class="profile">
+                           <img src="images/person4.png" alt="Profile Picture">
+                           <div>
+                              <div class="name">
+                                 Donald G. 
+                                 <div class="verified"></div>
+                              </div>
+                              <div class="title">Robotics (Bachelor of Computer Science)</div>
+                           </div>
+                        </div>
+                        <div class="actions">
+                           <a href="#">View Profile</a>
+                           <a href="#">Send Message</a>
+                           <a href="#">Book Now!</a>
+                        </div>
+                     </div>
+                     <div class="student-card">
+                        <div class="status">
+                           <div class="online pulseeffect-infi">
+                           </div>
+                        </div>
+                        <div class="profile">
+                           <img src="images/person2.png" alt="Profile Picture">
+                           <div>
+                              <div class="name">
+                                 Donald G. 
+                                 <div class="verified"></div>
+                              </div>
+                              <div class="title">Robotics (Bachelor of Computer Science)</div>
+                           </div>
+                        </div>
+                        <div class="actions">
+                           <a href="#">View Profile</a>
+                           <a href="#">Send Message</a>
+                           <a href="#">Book Now!</a>
+                        </div>
+                     </div>
+                     <div class="student-card">
+                        <div class="status">
+                           <div class="online pulseeffect-infi">
+                           </div>
+                        </div>
+                        <div class="profile">
+                           <img src="images/person4.png" alt="Profile Picture">
+                           <div>
+                              <div class="name">
+                                 Donald G. 
+                                 <div class="verified"></div>
+                              </div>
+                              <div class="title">Robotics (Bachelor of Computer Science)</div>
+                           </div>
+                        </div>
+                        <div class="actions">
+                           <a href="#">View Profile</a>
+                           <a href="#">Send Message</a>
+                           <a href="#">Book Now!</a>
+                        </div>
+                     </div>
+                     <div class="student-card">
+                        <div class="status">
+                           <div class="online pulseeffect-infi">
+                           </div>
+                        </div>
+                        <div class="profile">
+                           <img src="images/person1.png" alt="Profile Picture">
+                           <div>
+                              <div class="name">
+                                 Donald G. 
+                                 <div class="verified"></div>
+                              </div>
+                              <div class="title">Robotics (Bachelor of Computer Science)</div>
+                           </div>
+                        </div>
+                        <div class="actions">
+                           <a href="#">View Profile</a>
+                           <a href="#">Send Message</a>
+                           <a href="#">Book Now!</a>
+                        </div>
+                     </div>
+                     <div class="student-card">
+                        <div class="status">
+                           <div class="online pulseeffect-infi">
+                           </div>
+                        </div>
+                        <div class="profile">
+                           <img src="images/person2.png" alt="Profile Picture">
+                           <div>
+                              <div class="name">
+                                 Donald G. 
+                                 <div class="verified"></div>
+                              </div>
+                              <div class="title">Robotics (Bachelor of Computer Science)</div>
+                           </div>
+                        </div>
+                        <div class="actions">
+                           <a href="#">View Profile</a>
+                           <a href="#">Send Message</a>
+                           <a href="#">Book Now!</a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </section>
+         </div>
+      </div>
+      <script>
+         function toggleDropdown() {
+           const dropdown = document.getElementById('dropdown');
+           dropdown.classList.toggle('open');
+         }
+         
+         // Update counter dynamically
+         function updateCounter() {
+           const checkboxes = document.querySelectorAll('.checkbox');
+           const counter = document.getElementById('counter');
+           const selectedCount = Array.from(checkboxes).filter(checkbox => checkbox.checked).length;
+           counter.textContent = `(${selectedCount})`;
+         }
+         
+         // Add event listeners to checkboxes
+         const checkboxes = document.querySelectorAll('.checkbox');
+         checkboxes.forEach(checkbox => {
+           checkbox.addEventListener('change', updateCounter);
+         });
+         
+         // Close the dropdown if clicked outside
+         window.onclick = function(event) {
+           if (!event.target.matches('.dropdown-btn')) {
+             const dropdown = document.getElementById('dropdown');
+             dropdown.classList.remove('open');
+           }
+         };
+         
+         // Initialize the counter on page load
+         updateCounter();
+      </script>
+   </body>
 </html>
