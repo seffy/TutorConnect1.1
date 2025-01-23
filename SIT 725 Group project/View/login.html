@@ -8,171 +8,115 @@
       <link rel="stylesheet" href="/styles.css">
    </head>
    <body>
-	   
-	   <div class="container">
-      <div class="login-container">
-         <!-- Left Column -->
-         <div class="left-column" id="leftColumn">
-        <div class="log-logo"><a href="/" class="logo">TutorConnect</a></div>
-            <h1>Empowering Minds, Connecting Learners.</h1>
-			 <div><span style="font-size: 22px;">Your Gateway to Smarter Learning</span></div>
-			 
-        <div class="spacer"></div>
-         </div>
-         <!-- Right Column -->
-         <div class="right-column">
-			 
-		 <!---- LOGIN --->
-			 
-            <div id="loginForm" class="form-container">
-              
-               <h2 class="title">Welcome Back</h2>
-              <form action="/api/login" method="POST">
-                  <div class="input-group">
-                     <input class="input" required autocomplete="off" type="email" name="email" id="email">
-                     <label class="label" for="username">Email or Phone</label>
+      <div class="container">
+         <div class="login-container">
+            <!-- Left Column -->
+            <div class="left-column" id="leftColumn">
+               <div class="log-logo"><a href="/" class="logo">TutorConnect</a></div>
+               <h1>Empowering Minds, Connecting Learners.</h1>
+               <div><span style="font-size: 22px;">Your Gateway to Smarter Learning</span></div>
+               <div class="spacer"></div>
+            </div>
+            <!-- Right Column -->
+            <div class="right-column">
+               <!---- LOGIN --->
+               <div id="loginForm" class="form-container">
+                  <h2 class="title">Welcome Back</h2>
+                  <form action="/api/login" method="POST">
+                     <div class="input-group">
+                        <input class="input" required autocomplete="off" type="email" name="email" id="email">
+                        <label class="label" for="email">Email Address</label>
+                     </div>
+                     <div class="input-group">
+                        <input class="input" required autocomplete="off" id="password" name="password" type="password">
+                        <label class="label" for="password">Password</label>	  
+                     </div>
+                     <div id="error-message-login" class="error-message">Invalid email or password</div>
+                     <button class="bg-orange" type="submit">Login</button>
+                  </form>
+                  <br>
+                  <p>OR</p>
+                  <div class="sso-buttons">
+                     <button class="btn-google "><img  src="/images/icon-google.png" alt="GOOGLE">  Login with Google</button>
+                     <!-- <button class="btn-face"><img src="img/icon-face1.png"  alt="GOOGLE">Login with Facebook</button> --->
                   </div>
-                  <div class="input-group">
-                     <input class="input" required autocomplete="off" id="password" name="password" type="password">
-                     <label class="label" for="password">Password</label>	  
+                  <div class="switch">
+                     Don’t have an account? <a href="#" onclick="toggleForms('registerForm')">Create an Account</a>
                   </div>
-                  <div id="error-message-login" class="error-message">Invalid email or password</div>
-
-                  <button class="bg-orange" type="submit">Login</button>
-               </form>
-               <br>
-               <p>OR</p>
-               <div class="sso-buttons">
-                  <button class="btn-google "><img  src="/images/icon-google.png" alt="GOOGLE">  Login with Google</button>
-                 <!-- <button class="btn-face"><img src="img/icon-face1.png"  alt="GOOGLE">Login with Facebook</button> --->
                </div>
-               <div class="switch">
-                  Don’t have an account? <a href="#" onclick="toggleForms('registerForm')">Create an Account</a>
+               <!---- CREATE AN ACCOUNT --->
+               <div id="registerForm" class="form-container hidden">
+                  <h2>Create an Account</h2>
+                  <form onsubmit="return validatePasswords()" action="/api/students/register" method="POST">
+                     <div class="input-group">
+                        <input class="input" required autocomplete="off" type="text" name="name">
+                        <label class="label" for="username">Full Name</label>
+                     </div>
+                     <div class="input-group">
+                        <input class="input" required autocomplete="off" type="email" name="email" id="regemail">
+                        <label class="label" for="email">Email Address</label>
+                     </div>
+                     <div id="error-message" class="error-message"></div>
+                     <div class="input-group">
+                        <input class="input" required autocomplete="off" id="newpassword" name="password" type="password">
+                        <label class="label" for="password">Password</label>	  
+                     </div>
+                     <div class="input-group">
+                        <input class="input" required autocomplete="off" id="confirmpassword" type="password">
+                        <label class="label" for="confirmpassword">Confirm Password</label>	  
+                     </div>
+                     <button type="submit" class="bg-orange">Register</button>
+                  </form>
+                  <div class="sso-buttons">
+                     <button class="btn-google "><img  src="/images/icon-google.png" alt="GOOGLE">  Login with Google</button>
+                     <!-- <button class="btn-face"><img src="img/icon-face1.png"  alt="GOOGLE">Login with Facebook</button> -->
+                  </div>
+                  <div class="switch">
+                     Already have an account? <a href="#" onclick="toggleForms('loginForm')">Login</a>
+                  </div>
                </div>
             </div>
-			 
-			 
-			 
-			 <!---- CREATE AN ACCOUNT --->
-			 
-          <div id="registerForm" class="form-container hidden">
-            <h2>Create an Account</h2>
-           <form onsubmit="return validatePasswords()" action="/api/students/register" method="POST">
-
-            <div class="input-group">
-               <input class="input" required autocomplete="off" type="text" name="name">
-               <label class="label" for="username">Full Name</label>
-              </div>
-              <div class="input-group">
-              <input class="input" required autocomplete="off" type="email" name="email" id="regemail">
-               <label class="label" for="username">Email Address</label>
-              </div>
-
-              <div id="error-message" class="error-message"></div>
-
-              <div class="input-group">
-               <input class="input" required autocomplete="off" id="newpassword" name="password" type="password">
-               <label class="label" for="password">Password</label>	  
-              </div>
-              <div class="input-group">
-                <input class="input" required autocomplete="off" id="confirmpassword" type="password">
-                <label class="label" for="confirmpassword">Confirm Password</label>	  
-               </div>
-              
-              <button type="submit" class="bg-orange">Register</button>
-
-
-
-</form>
-            <div class="sso-buttons">
-               <button class="btn-google "><img  src="/images/icon-google.png" alt="GOOGLE">  Login with Google</button>
-              <!-- <button class="btn-face"><img src="img/icon-face1.png"  alt="GOOGLE">Login with Facebook</button> -->
-            </div>
-            <div class="switch">
-               Already have an account? <a href="#" onclick="toggleForms('loginForm')">Login</a>
-            </div>
-         </div>
-			 
-			 
-			 
-			 
          </div>
       </div>
-	   </div>
-	   
-	   
-	   
-	   
-	   
-	   
-	   
       <script>
-
-
-/*
-function validatePasswords() {
-    const password = document.getElementById('newpassword').value;
-    const confirmPassword = document.getElementById('confirmpassword').value;
-    const errorMessage = document.getElementById('error-message');
-    
-    if (password !== confirmPassword) {
-      errorMessage.style.display = 'block';
-      errorMessage.innerHTML = 'Passwords do not match!';
-      return false; 
-    } else {
-      errorMessage.style.display = 'none';
-      return true;
-
-    }
-
-  }
-  */
-
-  function validatePasswords() {
-  const password = document.getElementById('newpassword').value.trim();
-  const confirmPassword = document.getElementById('confirmpassword').value.trim();
-  const errorMessage = document.getElementById('error-message');
-
-  // Regular expression for password validation
-  const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-
-  // Validate password strength
-  if (!passwordPattern.test(password)) {
-    errorMessage.style.display = 'block';
-    errorMessage.textContent =
-      'Password must be at least 8 characters long, include an uppercase letter, a lowercase letter, a number, and a special character.';
-    return false;
-  } 
-  // Validate if passwords match
-  else if (password !== confirmPassword) {
-    errorMessage.style.display = 'block';
-    errorMessage.textContent = 'Passwords do not match. Please try again.';
-    return false;
-  } else {
-    // Clear error if all validations pass
-    errorMessage.style.display = 'none';
-    errorMessage.textContent = '';
-    return true;
-  }
-}
-
-
-
-
-
-         function toggleForms(formToShow) {
-            const loginForm = document.getElementById('loginForm');
-            const registerForm = document.getElementById('registerForm');
-            if (formToShow === 'loginForm') {
-               loginForm.classList.remove('hidden');
-               registerForm.classList.add('hidden');
-            } else {
-               registerForm.classList.remove('hidden');
-               loginForm.classList.add('hidden');
-            }
-         }
+         function validatePasswords() {
+         const password = document.getElementById('newpassword').value.trim();
+         const confirmPassword = document.getElementById('confirmpassword').value.trim();
+         const errorMessage = document.getElementById('error-message');
          
-
+         // Regular expression for password validation
+         const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+         
+         // Validate password strength
+         if (!passwordPattern.test(password)) {
+           errorMessage.style.display = 'block';
+           errorMessage.textContent =
+             'Password must be at least 8 characters long, include an uppercase letter, a lowercase letter, a number, and a special character.';
+           return false;
+         } 
+         // Validate if passwords match
+         else if (password !== confirmPassword) {
+           errorMessage.style.display = 'block';
+           errorMessage.textContent = 'Passwords do not match. Please try again.';
+           return false;
+         } else {
+           // Clear error if all validations pass
+           errorMessage.style.display = 'none';
+           errorMessage.textContent = '';
+           return true;
+         }
+         }
+                function toggleForms(formToShow) {
+                   const loginForm = document.getElementById('loginForm');
+                   const registerForm = document.getElementById('registerForm');
+                   if (formToShow === 'loginForm') {
+                      loginForm.classList.remove('hidden');
+                      registerForm.classList.add('hidden');
+                   } else {
+                      registerForm.classList.remove('hidden');
+                      loginForm.classList.add('hidden');
+                   }
+                }
       </script>
    </body>
 </html>

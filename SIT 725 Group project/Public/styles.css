@@ -342,13 +342,14 @@ padding: 10px;
           color: darkgray;
           transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
           pointer-events: none;
+          border-radius: 10px;
         }
         
         /* Focus and valid states */
         .input:focus {
           border: 1px solid #2196f3;
         }
-        /*
+       /*
         .input:is(:focus, :valid) ~ .label {
           transform: translateY(-120%) scale(0.8);
           background-color: #fff;
@@ -356,14 +357,54 @@ padding: 10px;
           color: #2196f3;
         } */
         .input:focus ~ .label,
-        .input:not(:placeholder-shown) ~ .label {
+        .input:not(:placeholder-shown) ~ label {
           transform: translateY(-120%) scale(0.8);
           background-color: #fff;
           padding-inline: 0.3rem;
           color: #01B1D9;
         }
 
+        
 
+/* STUDENT HOMEPAGE */
+
+.sh-input-group {
+  font-size: 1.25rem;
+  position: relative;
+}
+
+.sh-input {
+  all: unset;
+  color: #fefefe;
+  padding: 1rem;
+  border: 1px solid #9e9e9e;
+  border-radius: 10px;
+  transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+	width: 100%;
+}
+
+.sh-label {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  color: #d4d4d4;
+  pointer-events: none;
+  transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sh-input:focus {
+  border: 1px solid var(--primary);
+}
+
+.sh-input:is(:focus, :valid) ~ label {
+  transform: translateY(-120%) scale(0.7);
+  background-color: #1a1a1a;
+  padding-inline: 0.3rem;
+  color: var(--primary);
+}
+
+
+        
 
 
 
@@ -729,3 +770,237 @@ margin: 0 auto;
   margin-left: 10px;
 
 }
+
+.s-section {
+  width: 100%;
+  height: auto;
+
+
+}
+
+.s-section .s-container{
+
+  width: 95%;
+  margin: 0 auto; 
+padding: 20px;
+  
+
+  
+}
+
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Space between buttons */
+  justify-content: flex-start; /* Align items to the left */
+  padding: 20px;
+}
+.cat-btn {
+  padding: 15px 30px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+.flex-container .cat-btn:hover {
+  background-color: #0056b3;
+}
+
+.sh-category{
+  margin-top: 20px;
+}
+
+
+.tutor-card { 
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: calc(33.333% - 20px); /* 3 cards per row with spacing */
+  max-width: 300px; /* Prevent overly large cards */
+  padding: 20px;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #6b2cc7; /* Purple badge */
+  color: white;
+  font-size: 12px;
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+
+.status {
+  position: absolute;
+  top: 5px;
+  right: 0px;
+ /*  background-color: #56c596; Green status */
+  color: white;
+  font-size: 12px;
+  padding: 5px 10px;
+  border-radius: 0px 10px 0 20px;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.profile img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-right: 15px;
+  border: 2px solid #ddd;
+}
+
+.profile .name {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.profile .verified {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  color: #3b82f6; 
+  font-size: 16px;
+  margin-left: 5px;
+  background-image: url('/images/verified.svg');
+  background-size: cover;
+  background-position: center center;
+  
+}
+
+.profile .title {
+  font-size: 14px;
+  color: #555;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+  margin-top: 10px;
+}
+
+.actions a {
+  text-decoration: none;
+  font-size: 12px;
+  color: #007bff; /* Blue links */
+  font-weight: bold;
+}
+
+.actions a:hover {
+  text-decoration: underline;
+}
+
+
+
+
+
+
+.online {
+  background-color: #56c596; /* Green online status */
+  border-radius: 99px;
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  margin-right: 3px;
+}
+
+
+@keyframes shadow-pulse {
+  0% {
+      box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+  }
+  100% {
+      box-shadow: 0 0 0 25px rgba(0, 0, 0, 0);
+  }
+}
+
+
+.pulseeffect-infi {
+  animation: shadow-pulse 1s infinite;
+-webkit-animation: shadow-pulse 1s infinite;
+  -moz-animation: shadow-pulse 1s infinite;
+}
+
+
+    /* Dropdown container */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    /* Dropdown button */
+    .dropdown-btn {
+      background-color: #f4f4f4;
+      border: 1px solid #ccc;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-width: 200px;
+    }
+
+    .dropdown-btn:after {
+      content: '▼';
+      font-size: 12px;
+      margin-left: 10px;
+    }
+
+    /* Dropdown menu */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      z-index: 1000;
+      background-color: white;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      width: 100%;
+    }
+
+    /* Checkbox list */
+    .checkbox-list {
+      list-style: none;
+      margin: 0;
+      padding: 10px;
+      max-height: 200px;
+      overflow-y: auto; /* Scrollable if too many items */
+    }
+
+    .checkbox-list li {
+      margin-bottom: 10px;
+    }
+
+    .checkbox-list label {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .checkbox-list input[type="checkbox"] {
+      margin-right: 10px;
+    }
+
+    /* Show dropdown on button click */
+    .dropdown.open .dropdown-content {
+      display: block;
+    }

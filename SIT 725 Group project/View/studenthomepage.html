@@ -9,130 +9,254 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
    </head>
    <body>
-
-
-    <nav class="navbar bg-darkblue ">
-        <div class="nav-container">
-          <a href="#" class="logo">TutorConnect</a>
-          <ul class="nav-links">
-            <li><a href="#">Messages<div class="newmsg">1</div></a></li>
-            <li><a href="#">My Profile</a></li>
-            <li><a href="/">Logout <i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
-            <li>Student Dashboard <a class="btn-change bg-gray5">Change</a></li>
-           
-          </ul>
-        </div>
+      <nav class="navbar bg-darkblue ">
+         <div class="nav-container">
+            <a href="#" class="logo">TutorConnect</a>
+            <ul class="nav-links">
+               <li>
+                  <a href="#">
+                     Messages
+                     <div class="newmsg">1</div>
+                  </a>
+               </li>
+               <li><a href="#">My Profile</a></li>
+               <li><a href="/">Logout <i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
+               <li>Student Dashboard <a class="btn-change bg-gray5">Change</a></li>
+            </ul>
+         </div>
       </nav>
-	   
-	   <div class="home-container">
+      <div class="home-container">
+         <div class="second-container">
+            <h3 class="title">Welcome back, {NAME}! </h3>
+            <section class="s-section img-7 border-radius">
+               <div class="s-container">
+                  <div class="">
+                     <h1>No lessons yet!</h1>
+                     <p>Book your first session now!</p>
+                     
+                  </div>
+               </div>
+            </section>
+            <section>
+               <div class="sh-category">
+                  <h2 class="title">Category</h2>
 
+                  <div class="flex-container">
+                    <div class="cat-btn">Real World Analytics</div>
+                    <div class="cat-btn">Programming</div>
+                    <div class="cat-btn">Design</div>
+                    <div class="cat-btn">Match</div>
+                    <div class="cat-btn">Leadership</div>
+                 
+                  </div>
+               </div>
+            </section>
 
+            <section>
+                <div class="sh-category">
+                   <h2 class="title">Peer Tutors</h2>
 
+                   <div class="dropdown" id="dropdown">
+                    <div class="dropdown-btn" onclick="toggleDropdown()">Specialties <span id="counter">0</span></div>
+                    <div class="dropdown-content">
+                      <ul class="checkbox-list">
+                        <li>
+                          <label><input type="checkbox" class="checkbox" > Unit 1</label>
+                        </li>
+                        <li>
+                          <label><input type="checkbox" class="checkbox" > Unit 2</label>
+                        </li>
+                        <li>
+                          <label><input type="checkbox" class="checkbox"> Unit 3</label>
+                        </li>
+                
+                      </ul>
+                    </div>
+                  </div>
+ 
+                   <div class="flex-container">
+                     <div class="tutor-card">
+                        <div class="status">
+                            <div class="online pulseeffect-infi">
+                                </div>
+                        </div>
+                        <div class="profile">
+                          <img src="images/person2.png" alt="Profile Picture">
+                         
+                          <div>
+                            <div class="name">Donald G. <div class="verified"></div>
+                            </div>
+                            <div class="title">Robotics (Bachelor of Computer Science)</div>
+                          </div>
+                        </div>
+                        <div class="actions">
+                            <a href="#">View Profile</a>
+                            <a href="#">Send Message</a>
+                            <a href="#">Book Now!</a>
+                          </div>
+                     </div>
+                     <div class="tutor-card">
+                        <div class="status">
+                            <div class="online pulseeffect-infi">
+                                </div>
+                        </div>
+                        <div class="profile">
+                          <img src="images/person2.png" alt="Profile Picture">
+                         
+                          <div>
+                            <div class="name">Donald G. <div class="verified"></div>
+                            </div>
+                            <div class="title">Robotics (Bachelor of Computer Science)</div>
+                          </div>
+                        </div>
+                        <div class="actions">
+                            <a href="#">View Profile</a>
+                            <a href="#">Send Message</a>
+                            <a href="#">Book Now!</a>
+                          </div>
+                     </div>
+                     <div class="tutor-card">
+                        <div class="status">
+                            <div class="online pulseeffect-infi">
+                                </div>
+                        </div>
+                        <div class="profile">
+                          <img src="images/person2.png" alt="Profile Picture">
+                         
+                          <div>
+                            <div class="name">Donald G. <div class="verified"></div>
+                            </div>
+                            <div class="title">Robotics (Bachelor of Computer Science)</div>
+                          </div>
+                        </div>
+                        <div class="actions">
+                            <a href="#">View Profile</a>
+                            <a href="#">Send Message</a>
+                            <a href="#">Book Now!</a>
+                          </div>
+                     </div>
+                     <div class="tutor-card">
+                        <div class="status">
+                            <div class="online pulseeffect-infi">
+                                </div>
+                        </div>
+                        <div class="profile">
+                          <img src="images/person2.png" alt="Profile Picture">
+                         
+                          <div>
+                            <div class="name">Donald G. <div class="verified"></div>
+                            </div>
+                            <div class="title">Robotics (Bachelor of Computer Science)</div>
+                          </div>
+                        </div>
+                        <div class="actions">
+                            <a href="#">View Profile</a>
+                            <a href="#">Send Message</a>
+                            <a href="#">Book Now!</a>
+                          </div>
+                     </div>
 
-		   
-      <div class="second-container">
-		  <h3 class="title">Welcome back, {NAME}! </h3>
+                     <div class="tutor-card">
+                        <div class="status">
+                            <div class="online pulseeffect-infi">
+                                </div>
+                        </div>
+                        <div class="profile">
+                          <img src="images/person2.png" alt="Profile Picture">
+                         
+                          <div>
+                            <div class="name">Donald G. <div class="verified"></div>
+                            </div>
+                            <div class="title">Robotics (Bachelor of Computer Science)</div>
+                          </div>
+                        </div>
+                        <div class="actions">
+                            <a href="#">View Profile</a>
+                            <a href="#">Send Message</a>
+                            <a href="#">Book Now!</a>
+                          </div>
+                     </div>
 
+                     <div class="tutor-card">
+                        <div class="status">
+                            <div class="online pulseeffect-infi">
+                                </div>
+                        </div>
+                        <div class="profile">
+                          <img src="images/person2.png" alt="Profile Picture">
+                         
+                          <div>
+                            <div class="name">Donald G. <div class="verified"></div>
+                            </div>
+                            <div class="title">Robotics (Bachelor of Computer Science)</div>
+                          </div>
+                        </div>
+                        <div class="actions">
+                            <a href="#">View Profile</a>
+                            <a href="#">Send Message</a>
+                            <a href="#">Book Now!</a>
+                          </div>
+                     </div>
 
-  <section class="hero img-7 border-radius">
-    <div class="h-container">
-      <div class="hero-text">
-        <h1>Placeholder</h1>
-        <p>Find peer tutors who match your goals and schedule.</p>
-      </div>
-
-    </div>
-  </section>
-
-<section>
-    <div>
-    <h2 class="title">Category</h2>
-</div>
-
-</section>
-
-
-  <section class="features">
-    <div class="h-container">
-      <h2 class="title">Placeholder</h2>
-      <div class="feature-grid">
-        <div class="feature-card">
-			<div class="feat-img img-1 bg-darkblue border-radius-top">
-			
-			</div>
-			
-    <div class="feature-card-desc">
-          <h3>Placeholder</h3>
-          <p>Learn from certified and experienced professionals.</p>
-</div>
-        </div>
-        <div class="feature-card">
-          <div class="feat-img img-2 border-radius-top">
-          
-          </div>
-          
-        <div class="feature-card-desc">
-              <h3>Placeholder</h3>
-              <p>Learn from certified and experienced professionals.</p>
-    </div>
-            </div>
-            <div class="feature-card">
-              <div class="feat-img img-3 bg-darkblue border-radius-top">
-              
-              </div>
-              
-            <div class="feature-card-desc">
-                  <h3>Placeholder</h3>
-                  <p>Learn from certified and experienced professionals.</p>
-        </div>
+                     <div class="tutor-card">
+                        <div class="status">
+                            <div class="online pulseeffect-infi">
+                                </div>
+                        </div>
+                        <div class="profile">
+                          <img src="images/person2.png" alt="Profile Picture">
+                         
+                          <div>
+                            <div class="name">Donald G. <div class="verified"></div>
+                            </div>
+                            <div class="title">Robotics (Bachelor of Computer Science)</div>
+                          </div>
+                        </div>
+                        <div class="actions">
+                            <a href="#">View Profile</a>
+                            <a href="#">Send Message</a>
+                            <a href="#">Book Now!</a>
+                          </div>
+                     </div>
+                  
+                   </div>
                 </div>
-      </div>
-    </div>
-  </section>
-
-<!----
-          <div class="cardcontainer">
-            <div class="card">
-              <h3>Card Title 1</h3>
-              <p>This is a description of the first card. It includes some brief information.</p>
-              <button>Read More</button>
-            </div>
-            <div class="card">
-              <h3>Card Title 2</h3>
-              <p>This is a description of the second card. It includes some brief information.</p>
-              <button>Read More</button>
-            </div>
-            <div class="card">
-              <h3>Card Title 3</h3>
-              <p>This is a description of the third card. It includes some brief information.</p>
-              <button>Read More</button>
-            </div>
-            <div class="card">
-              <h3>Card Title 4</h3>
-              <p>This is a description of the fourth card. It includes some brief information.</p>
-              <button>Read More</button>
-            </div>
-            <div class="card">
-              <h3>Card Title 5</h3>
-              <p>This is a description of the fifth card. It includes some brief information.</p>
-              <button>Read More</button>
-            </div>
-            <div class="card">
-              <h3>Card Title 6</h3>
-              <p>This is a description of the sixth card. It includes some brief information.</p>
-              <button>Read More</button>
-            </div>
-          </div>
---->
-
+             </section>
+           
+            
+         </div>
       </div>
 
-
-
-
-      
-	   </div>
-	   
-	
+      <script>
+        function toggleDropdown() {
+          const dropdown = document.getElementById('dropdown');
+          dropdown.classList.toggle('open');
+        }
+    
+        // Update counter dynamically
+        function updateCounter() {
+          const checkboxes = document.querySelectorAll('.checkbox');
+          const counter = document.getElementById('counter');
+          const selectedCount = Array.from(checkboxes).filter(checkbox => checkbox.checked).length;
+          counter.textContent = `(${selectedCount})`;
+        }
+    
+        // Add event listeners to checkboxes
+        const checkboxes = document.querySelectorAll('.checkbox');
+        checkboxes.forEach(checkbox => {
+          checkbox.addEventListener('change', updateCounter);
+        });
+    
+        // Close the dropdown if clicked outside
+        window.onclick = function(event) {
+          if (!event.target.matches('.dropdown-btn')) {
+            const dropdown = document.getElementById('dropdown');
+            dropdown.classList.remove('open');
+          }
+        };
+    
+        // Initialize the counter on page load
+        updateCounter();
+      </script>
    </body>
 </html>
