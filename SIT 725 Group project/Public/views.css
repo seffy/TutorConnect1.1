@@ -1,0 +1,17 @@
+@media (max-width: 768px) {
+    .login-container {
+       flex-direction: column;
+       height: auto;
+        width: 90%;
+        
+    }
+
+    .left-column {
+       height: 50vh;
+       padding: 20px;
+    }
+
+    .right-column {
+       padding: 20px;
+    }
+ }

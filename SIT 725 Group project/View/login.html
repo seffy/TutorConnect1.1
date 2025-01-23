@@ -64,18 +64,21 @@
                <label class="label" for="username">Full Name</label>
               </div>
               <div class="input-group">
-              <input class="input" required autocomplete="off" type="email" name="email2" id="regemail">
+              <input class="input" required autocomplete="off" type="email" name="email" id="regemail">
                <label class="label" for="username">Email Address</label>
               </div>
+
+              <div id="error-message" class="error-message"></div>
+
               <div class="input-group">
                <input class="input" required autocomplete="off" id="newpassword" name="password" type="password">
                <label class="label" for="password">Password</label>	  
               </div>
               <div class="input-group">
-               <input class="input" required autocomplete="off" id="confirmpassword" name="password" type="password">
-               <label class="label" for="confirmpassword">Confirm Password</label>	  
-              </div>
-              <div id="error-message" class="error-message"></div>
+                <input class="input" required autocomplete="off" id="confirmpassword" type="password">
+                <label class="label" for="confirmpassword">Confirm Password</label>	  
+               </div>
+              
               <button type="submit" class="bg-orange">Register</button>
 
 
@@ -106,7 +109,7 @@
       <script>
 
 
-
+/*
 function validatePasswords() {
     const password = document.getElementById('newpassword').value;
     const confirmPassword = document.getElementById('confirmpassword').value;
@@ -115,14 +118,43 @@ function validatePasswords() {
     if (password !== confirmPassword) {
       errorMessage.style.display = 'block';
       errorMessage.innerHTML = 'Passwords do not match!';
-      return false; // Prevent form submission
+      return false; 
     } else {
       errorMessage.style.display = 'none';
       return true;
 
     }
-  }
 
+  }
+  */
+
+  function validatePasswords() {
+  const password = document.getElementById('newpassword').value.trim();
+  const confirmPassword = document.getElementById('confirmpassword').value.trim();
+  const errorMessage = document.getElementById('error-message');
+
+  // Regular expression for password validation
+  const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+  // Validate password strength
+  if (!passwordPattern.test(password)) {
+    errorMessage.style.display = 'block';
+    errorMessage.textContent =
+      'Password must be at least 8 characters long, include an uppercase letter, a lowercase letter, a number, and a special character.';
+    return false;
+  } 
+  // Validate if passwords match
+  else if (password !== confirmPassword) {
+    errorMessage.style.display = 'block';
+    errorMessage.textContent = 'Passwords do not match. Please try again.';
+    return false;
+  } else {
+    // Clear error if all validations pass
+    errorMessage.style.display = 'none';
+    errorMessage.textContent = '';
+    return true;
+  }
+}
 
 
 

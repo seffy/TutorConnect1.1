@@ -98,6 +98,11 @@ html, body {
   color: var(--textcolor, #5a5b5b);
 }
 
+.text-color-w {
+  color: var(--textcolor-w, #fafafa);
+}
+
+
 
 
 /* Fixed Navigation Bar */
@@ -111,7 +116,7 @@ html, body {
 }
 
 .nav-container {
-  max-width: 1200px;
+
   margin: 0 auto;
   padding: 0 20px;
   display: flex;
@@ -136,12 +141,13 @@ html, body {
 
 .nav-links li {
   margin: 0 15px;
+  color: #fafafa;
 }
 
 .nav-links a {
-  color: #5d5d5d;
+  color: #fafafa;
   text-decoration: none;
-  font-size: 13px;
+
   transition: color 0.3s ease;
 }
 
@@ -164,8 +170,12 @@ html, body {
   width: 80%;
   margin: 0 auto;
   position: relative;
+}
 
-  
+.i-hero-container {
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
 }
          .login-container {
             display: flex;
@@ -243,7 +253,7 @@ html, body {
          }
 
 
-h2.title {
+.title {
 
 padding: 10px;
 
@@ -303,23 +313,7 @@ padding: 10px;
             display: none;
          }
 
-         @media (max-width: 768px) {
-            .login-container {
-               flex-direction: column;
-               height: auto;
-				width: 90%;
-				
-            }
-
-            .left-column {
-               height: 50vh;
-               padding: 20px;
-            }
-
-            .right-column {
-               padding: 20px;
-            }
-         }
+   
 
          .input-group {
           font-size: 1.25rem;
@@ -503,12 +497,25 @@ padding: 10px;
   align-items: center;
   background-color: #D9F6FA;
   padding: 50px 20px;
-	height: 50vh;
+	height: 60vh;
 	background-image: url('images/9.jpg');
 	background-position: center right;
 	background-size: cover;
 	background-repeat: no-repeat;
 }
+
+.hero-text {
+width: 80%;
+margin: 0 auto;
+}
+
+.what-text {
+  width: 80%;
+  margin: 0 auto;
+  }
+  
+
+
 
 .hero-text h1 {
   font-size: 2.5rem;
@@ -540,6 +547,14 @@ padding: 10px;
   cursor: pointer;
 }
 
+.btn-change {
+  border: none;
+  padding: 5px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 150px;
+}
+
 /* Features Section */
 .features {
   padding: 50px 20px;
@@ -554,23 +569,99 @@ padding: 10px;
 
 .feature-card {
   background-color: white;
-  padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
+
 }
 
+.feature-card-desc{
+  padding: 20px;
+}
 
+.border-radius {
+  border-radius: 10px;
+}
+.border-radius-top {
+  border-radius: 10px 10px 0 0;
+}
 
 .feature-card img {
-  width: 320px;
+ 
   height: auto;
   border-radius: 10px;
 }
 
+.img-1 {
+  
+	background-image: url('images/5.jpg');
+	background-position: center right;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.img-2 {
+  
+	background-image: url('images/6.jpg');
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.img-3 {
+  
+	background-image: url('images/7.jpg');
+	background-position: center right;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.img-4 {
+  
+	background-image: url('images/8.jpg');
+	background-position: center right;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+
+.img-5 {
+  
+	background-image: url('images/9.jpg');
+	background-position: center right;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+
+.img-6 {
+  
+	background-image: url('images/10.jpg');
+	background-position: center right;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.img-7 {
+  
+	background-image: url('images/11.jpg');
+	background-position: center right;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.img-8 {
+  
+	background-image: url('images/12.jpg');
+	background-position: center right;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+
+
+
 /* Testimonials Section */
 .testimonials {
-  background-color: #f5f5f5;
+  background-color: #002677;
   padding: 50px 20px;
 }
 
@@ -605,9 +696,7 @@ padding: 10px;
   margin: 0 10px;
   text-decoration: none;
 }
-.hero-text {
-	margin-left: 100px;
-}
+
 
 .feat-img {
 	width: 100%;
@@ -620,5 +709,23 @@ padding: 10px;
   position: absolute;
   top:20px;
   left: 20px;
+
+}
+
+.testimonial-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.newmsg{
+  height: 25px;
+  width: 25px;
+  border-radius: 99px;
+  background-color:salmon;
+  text-align: center;
+  display: inline-block;
+  margin-left: 10px;
 
 }
