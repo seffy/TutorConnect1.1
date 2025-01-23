@@ -1,23 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
-  <link rel="stylesheet" href="/styles.css">
-</head>
-<body>
-  <div class="container">
-    <div class="image-section homepage"></div>
-    <div class="content-section">
-      <h1>Welcome Back</h1>
-      <form action="/api/login" method="POST">
-        <input type="email" name="email" placeholder="Email or Phone" required>
-        <input type="password" name="password" placeholder="Password" required>
-        <button type="submit" class="btn">Login</button>
-      </form>
-      <p class="link">Don't have an account? <a href="/register">Register</a></p>
-    </div>
-  </div>
-</body>
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Login / Register</title>
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="/styles.css">
+   </head>
+   <body>
+	   
+	   <div class="container">
+      <div class="login-container">
+         <!-- Left Column -->
+         <div class="left-column" id="leftColumn">
+        <div class="log-logo"><a href="/" class="logo">TutorConnect</a></div>
+            <h1>Empowering Minds, Connecting Learners.</h1>
+			 <div><span style="font-size: 22px;">Your Gateway to Smarter Learning</span></div>
+			 
+        <div class="spacer"></div>
+         </div>
+         <!-- Right Column -->
+         <div class="right-column">
+			 
+		 <!---- LOGIN --->
+			 
+            <div id="loginForm" class="form-container">
+              
+               <h2 class="title">Welcome Back</h2>
+              <form action="/api/login" method="POST">
+                  <div class="input-group">
+                     <input class="input" required autocomplete="off" type="email" name="email" id="email">
+                     <label class="label" for="username">Email or Phone</label>
+                  </div>
+                  <div class="input-group">
+                     <input class="input" required autocomplete="off" id="password" name="password" type="password">
+                     <label class="label" for="password">Password</label>	  
+                  </div>
+                  <div id="error-message-login" class="error-message">Invalid email or password</div>
+
+                  <button class="bg-orange" type="submit">Login</button>
+               </form>
+               <br>
+               <p>OR</p>
+               <div class="sso-buttons">
+                  <button class="btn-google "><img  src="/images/icon-google.png" alt="GOOGLE">  Login with Google</button>
+                 <!-- <button class="btn-face"><img src="img/icon-face1.png"  alt="GOOGLE">Login with Facebook</button> --->
+               </div>
+               <div class="switch">
+                  Don’t have an account? <a href="#" onclick="toggleForms('registerForm')">Create an Account</a>
+               </div>
+            </div>
+			 
+			 
+			 
+			 <!---- CREATE AN ACCOUNT --->
+			 
+          <div id="registerForm" class="form-container hidden">
+            <h2>Create an Account</h2>
+           <form onsubmit="return validatePasswords()" action="/api/students/register" method="POST">
+
+            <div class="input-group">
+               <input class="input" required autocomplete="off" type="text" name="name">
+               <label class="label" for="username">Full Name</label>
+              </div>
+              <div class="input-group">
+              <input class="input" required autocomplete="off" type="email" name="email2" id="regemail">
+               <label class="label" for="username">Email Address</label>
+              </div>
+              <div class="input-group">
+               <input class="input" required autocomplete="off" id="newpassword" name="password" type="password">
+               <label class="label" for="password">Password</label>	  
+              </div>
+              <div class="input-group">
+               <input class="input" required autocomplete="off" id="confirmpassword" name="password" type="password">
+               <label class="label" for="confirmpassword">Confirm Password</label>	  
+              </div>
+              <div id="error-message" class="error-message"></div>
+              <button type="submit" class="bg-orange">Register</button>
+
+
+
+</form>
+            <div class="sso-buttons">
+               <button class="btn-google "><img  src="/images/icon-google.png" alt="GOOGLE">  Login with Google</button>
+              <!-- <button class="btn-face"><img src="img/icon-face1.png"  alt="GOOGLE">Login with Facebook</button> -->
+            </div>
+            <div class="switch">
+               Already have an account? <a href="#" onclick="toggleForms('loginForm')">Login</a>
+            </div>
+         </div>
+			 
+			 
+			 
+			 
+         </div>
+      </div>
+	   </div>
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+      <script>
+
+
+
+function validatePasswords() {
+    const password = document.getElementById('newpassword').value;
+    const confirmPassword = document.getElementById('confirmpassword').value;
+    const errorMessage = document.getElementById('error-message');
+    
+    if (password !== confirmPassword) {
+      errorMessage.style.display = 'block';
+      errorMessage.innerHTML = 'Passwords do not match!';
+      return false; // Prevent form submission
+    } else {
+      errorMessage.style.display = 'none';
+      return true;
+
+    }
+  }
+
+
+
+
+
+
+         function toggleForms(formToShow) {
+            const loginForm = document.getElementById('loginForm');
+            const registerForm = document.getElementById('registerForm');
+            if (formToShow === 'loginForm') {
+               loginForm.classList.remove('hidden');
+               registerForm.classList.add('hidden');
+            } else {
+               registerForm.classList.remove('hidden');
+               loginForm.classList.add('hidden');
+            }
+         }
+         
+
+      </script>
+   </body>
 </html>
