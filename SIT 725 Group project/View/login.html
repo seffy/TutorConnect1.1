@@ -108,7 +108,8 @@
        
            const errorMessage = document.getElementById('errorregistermessage');
            const passwordInput = document.getElementById('password'); // Assuming an input with ID 'password'
-           
+
+
            // Clear previous error messages
            errorMessage.style.display = 'none';
            errorMessage.textContent = '';
@@ -154,12 +155,17 @@
          // Password validation function
          function validatePassword(password) {
            const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+           const confirmPasswordInput = confirmpassword.value;
            if (!password) {
              return 'Password is required.';
            }
            if (!passwordRegex.test(password)) {
              return 'Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, one number, and one special character.';
            }
+           if (password !== confirmPasswordInput) {
+               return 'Passwords do not match.';
+            }
+
            return null; // Return null if password is valid
          }
        </script>
