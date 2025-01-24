@@ -101,6 +101,9 @@ html, body {
 .text-color-w {
   color: var(--textcolor-w, #fafafa);
 }
+.text-color-w90 {
+  color: var(--textcolor-w, #fafafa90);
+}
 
 
 
@@ -242,7 +245,7 @@ html, body {
 
          .form-container h2 {
             font-size: 1.8rem;
-            margin-bottom: 20px;
+
             color: #333;
          }
 
@@ -422,6 +425,10 @@ padding: 10px;
     color: red; 
     display: none;
     margin-bottom: 8px;
+    
+}
+#invalidcred {
+  padding-bottom: 10px;
 }
 
 
@@ -1073,3 +1080,5 @@ padding: 20px;
     .upcomingsessions {
       margin-top: 20px;
     }
+
+   

@@ -12,7 +12,7 @@
          <div class="login-container">
             <!-- Left Column -->
             <div class="left-column" id="leftColumn">
-               <div class="log-logo"><a href="/" class="logo">TutorConnect</a></div>
+               <div class="log-logo"><a href="/" class="logo text-color-w90">TutorConnect</a></div>
                <h1>Empowering Minds, Connecting Learners.</h1>
                <div><span style="font-size: 22px;">Your Gateway to Smarter Learning</span></div>
                <div class="spacer"></div>
@@ -23,6 +23,8 @@
                <div id="loginForm" class="form-container">
                   <h2 class="title">Welcome Back</h2>
                   <form action="/api/login" method="POST">
+
+                     <div id="invalidcred" class="error-message"></div>
                      <div class="input-group">
                         <input class="input" required autocomplete="off" type="email" name="email" id="email">
                         <label class="label" for="email">Email Address</label>
@@ -31,7 +33,7 @@
                         <input class="input" required autocomplete="off" id="password" name="password" type="password">
                         <label class="label" for="password">Password</label>	  
                      </div>
-                     <div id="error-message-login" class="error-message">Invalid email or password</div>
+                
                      <button class="bg-orange" type="submit">Login</button>
                   </form>
                   <br>
@@ -45,13 +47,14 @@
                   </div>
                </div>
                <!---- CREATE AN ACCOUNT --->
-               <div id="registerForm" class="form-container hidden">
+               <div id="registerForm1" class="form-container hidden">
                   <h2>Create an Account</h2>
-                  <form onsubmit="return validatePasswords()" action="/api/students/register" method="POST">
+                  <form action="/api/students/register" method="POST" id="registerForm">
                      <div class="input-group">
                         <input class="input" required autocomplete="off" type="text" name="name">
                         <label class="label" for="username">Full Name</label>
                      </div>
+                     <div id="errorregistermessage"></div>
                      <div class="input-group">
                         <input class="input" required autocomplete="off" type="email" name="email" id="regemail">
                         <label class="label" for="email">Email Address</label>
@@ -68,7 +71,7 @@
                      <button type="submit" class="bg-orange">Register</button>
                   </form>
                   <div class="sso-buttons">
-                     <button class="btn-google "><img  src="/images/icon-google.png" alt="GOOGLE">  Login with Google</button>
+                     <button class="btn-google "><img  src="/images/icon-google.png" alt="GOOGLE">  Sign up with Google</button>
                      <!-- <button class="btn-face"><img src="img/icon-face1.png"  alt="GOOGLE">Login with Facebook</button> -->
                   </div>
                   <div class="switch">
@@ -78,37 +81,12 @@
             </div>
          </div>
       </div>
-      <script>
-         function validatePasswords() {
-         const password = document.getElementById('newpassword').value.trim();
-         const confirmPassword = document.getElementById('confirmpassword').value.trim();
-         const errorMessage = document.getElementById('error-message');
-         
-         // Regular expression for password validation
-         const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-         
-         // Validate password strength
-         if (!passwordPattern.test(password)) {
-           errorMessage.style.display = 'block';
-           errorMessage.textContent =
-             'Password must be at least 8 characters long, include an uppercase letter, a lowercase letter, a number, and a special character.';
-           return false;
-         } 
-         // Validate if passwords match
-         else if (password !== confirmPassword) {
-           errorMessage.style.display = 'block';
-           errorMessage.textContent = 'Passwords do not match. Please try again.';
-           return false;
-         } else {
-           // Clear error if all validations pass
-           errorMessage.style.display = 'none';
-           errorMessage.textContent = '';
-           return true;
-         }
-         }
-                function toggleForms(formToShow) {
+
+
+<script>
+ function toggleForms(formToShow) {
                    const loginForm = document.getElementById('loginForm');
-                   const registerForm = document.getElementById('registerForm');
+                   const registerForm = document.getElementById('registerForm1');
                    if (formToShow === 'loginForm') {
                       loginForm.classList.remove('hidden');
                       registerForm.classList.add('hidden');
@@ -117,6 +95,133 @@
                       loginForm.classList.add('hidden');
                    }
                 }
-      </script>
+   </script>
+      
+
+      <script>
+         document.getElementById('registerForm').addEventListener('submit', async (event) => {
+           event.preventDefault(); // Prevent default form submission behavior
+       
+           const form = event.target;
+           const formData = new FormData(form);
+           const data = Object.fromEntries(formData.entries()); // Convert form data to an object
+       
+           const errorMessage = document.getElementById('errorregistermessage');
+           const passwordInput = document.getElementById('password'); // Assuming an input with ID 'password'
+           
+           // Clear previous error messages
+           errorMessage.style.display = 'none';
+           errorMessage.textContent = '';
+           errorMessage.style.color = 'red';
+       
+           // Client-side password validation
+           const passwordValidationMessage = validatePassword(data.password);
+           if (passwordValidationMessage) {
+             errorMessage.style.display = 'block';
+             errorMessage.textContent = passwordValidationMessage;
+             return; // Stop form submission if validation fails
+           }
+       
+           try {
+             const response = await fetch('/api/students/register', {
+               method: 'POST',
+               headers: { 'Content-Type': 'application/json' },
+               body: JSON.stringify(data),
+             });
+       
+             if (response.status === 400) {
+               // Handle 400 error response
+               const result = await response.json();
+               errorMessage.style.display = 'block'; // Show error message div
+               errorMessage.textContent = result.message || 'An error occurred';
+             } 
+             else if (response.ok) {
+               // Redirect to success page on successful registration
+               window.location.href = '/register-success';
+             } else {
+               // Handle unexpected errors
+               console.error('Unexpected error:', response.status);
+               errorMessage.style.display = 'block';
+               errorMessage.textContent = 'An unexpected error occurred. Please try again.';
+             }
+           } catch (error) {
+             console.error('Error:', error.message);
+             errorMessage.style.display = 'block';
+             errorMessage.textContent = 'A network error occurred. Please try again.';
+           }
+         });
+       
+         // Password validation function
+         function validatePassword(password) {
+           const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+           if (!password) {
+             return 'Password is required.';
+           }
+           if (!passwordRegex.test(password)) {
+             return 'Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, one number, and one special character.';
+           }
+           return null; // Return null if password is valid
+         }
+       </script>
+       
+
+
+
+       <script>
+         document.getElementById('loginForm').addEventListener('submit', async (event) => {
+           event.preventDefault(); // Prevent default form submission behavior
+       
+           const form = event.target;
+           const formData = new FormData(form);
+           const data = Object.fromEntries(formData.entries()); // Convert form data to an object
+       
+           const errorMessageCRED = document.getElementById('invalidcred');
+           
+           // Clear previous error messages
+           errorMessageCRED.style.display = 'none';
+           errorMessageCRED.textContent = '';
+           errorMessageCRED.style.color = 'red';
+       
+       
+           try {
+             const response = await fetch('/api/login', {
+               method: 'POST',
+               headers: { 'Content-Type': 'application/json' },
+               body: JSON.stringify(data),
+             });
+       
+             if (response.status === 401) {
+               // Handle 400 error response
+               const result = await response.json();
+               errorMessageCRED.style.display = 'block'; // Show error message div
+               errorMessageCRED.textContent = result.message || 'An error occurred';
+             } 
+             else if (response.ok) {
+               // Redirect to success page on successful registration
+               window.location.href = '/student-homepage';
+             } else {
+               // Handle unexpected errors
+               console.error('Unexpected error:', response.status);
+               errorMessageCRED.style.display = 'block';
+               errorMessageCRED.textContent = 'An unexpected error occurred. Please try again.';
+             }
+           } catch (error) {
+             console.error('Error:', error.message);
+             errorMessageCRED.style.display = 'block';
+             errorMessageCRED.textContent = 'A network error occurred. Please try again.';
+           }
+         });
+       
+        
+       </script>
+       
+
+
+
+
+
+
+
+
    </body>
 </html>

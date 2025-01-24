@@ -11,7 +11,7 @@ exports.loginStudent = async (req, res) => {
   try {
     const student = await Student.findOne({ email, password });
     if (!student) {
-      return res.status(401).json({ message: 'Invalid email or password' });
+      return res.status(401).json({ message: 'Invalid email or password. Please try again.' });
     }
 
     res.sendFile(path.join(__dirname, '../View', 'studentHomepage.html')); // Redirect to Student Homepage
@@ -21,6 +21,7 @@ exports.loginStudent = async (req, res) => {
 };
 
 // Registration logic with redirect to success page
+
 exports.registerStudent = async (req, res) => {
   const { name, email, password } = req.body;
 
@@ -29,16 +30,18 @@ exports.registerStudent = async (req, res) => {
   }
 
   try {
+    
     const existingStudent = await Student.findOne({ email });
     if (existingStudent) {
-      return res.status(400).json({ message: 'Email already in use' });
+      return res.status(400).json({ message: 'Email address already in use. Please sign in.' });
     }
 
     const newStudent = new Student({ name, email, password });
     await newStudent.save();
 
-    res.redirect('/register-success'); // Redirect to success page
+    res.redirect('/register-success'); 
   } catch (error) {
     res.status(500).json({ message: 'Server error', error: error.message });
   }
 };
+
