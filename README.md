@@ -1,4 +1,4 @@
-# StudyMate
+# TutorConnect
 
 **Connecting Peer Tutors and Students**
 
