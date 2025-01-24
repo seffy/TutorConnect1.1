@@ -8,10 +8,10 @@
       <link rel="stylesheet" href="/views.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
    </head>
-   <body>
-      <nav class="navbar bg-darkblue ">
+   <body class="bg-gray6">
+      <nav class="navbar bg-gray1 text-color">
          <div class="nav-container">
-            <a href="#" class="logo">TutorConnect</a>
+            <a href="#" class="logo text-color-w">TutorConnect</a>
             <ul class="nav-links">
                <li>
                   <a href="#">
@@ -20,24 +20,34 @@
                   </a>
                </li>
                <li><a href="#">My Profile</a></li>
-               <li><a href="/">Logout <i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
+           
                <li>My Tutor Dashboard <a class="btn-change bg-gray5" href="/student-homepage">Change</a></li>
+               <li><a href="/" class="btn-primary bg-gray3">Logout <i class="fa fa-sign-out" aria-hidden="true" ></i></a></li>
             </ul>
          </div>
       </nav>
       <div class="home-container">
          <div class="second-container">
             <h3 class="title">Welcome back, {NAME}! </h3>
-            <section class="s-section img-7 border-radius">
+            <section class="s-section img-2 border-radius">
                <div class="s-container">
                   <div class="">
-                     <h1> lessons yet!</h1>
-                     <p>Book your first session now!</p>
+                     <h1> Request(s):</h1>
+                     <div class="flex-container">
+                        <div class="cat-btn bg-darkblue">(1) Real World Analytics</div>
+                        <div class="cat-btn"> (5)Programming</div>
+                    
+                     </div>
                   </div>
-               </div>
+                  
+                  <div class="upcomingsessions">
+                    <h1>Upcoming Session(s):</h1>
+                    <p>Your Upcoming Tutoring Lessons will appear here!</p>
+                 </div>
+                 <div class="spacer"></div>
             </section>
             <section>
-               <div class="sh-category">
+              <!--  <div class="sh-category">
                   <h2 class="title">Category</h2>
                   <div class="flex-container">
                      <div class="cat-btn">Real World Analytics</div>
@@ -46,7 +56,7 @@
                      <div class="cat-btn">Math</div>
                      <div class="cat-btn">Leadership</div>
                   </div>
-               </div>
+               </div> -->
             </section>
             <section>
                <div class="sh-category">
@@ -68,31 +78,43 @@
                      </div>
                   </div>
                   <div class="flex-container">
-                     <div class="student-card">
-                        <div class="status">
-                           <div class="online pulseeffect-infi">
-                           </div>
+                    <div class="student-card">
+                        <div class="status status-online">
+                           <div class="online-w">
+                           </div> Online
                         </div>
                         <div class="profile">
                            <img src="images/person2.png" alt="Profile Picture">
                            <div>
+                            <div class="ineedhelp-msg">{Annoucement}</div>
                               <div class="name">
-                                 {Tutor Name}
+                                 {name}
                                  <div class="verified"></div>
                               </div>
-                              <div class="title"> {Degree}</div>
+                             
                            </div>
                         </div>
-                        <div class="actions">
+                        <div class="tags">
+                            
+                            <p class="margin-bottom">I need help with:</p>
+                            <div class="margin-top">
+                                <div class="tag">{Unit/Subject/}</div>
+                    
+
+
+                            </div>
+                            </div>
+                       
+                        <div class="th-actions">
                            <a href="#">View Profile</a>
-                           <a href="#">Send Message</a>
-                           <a href="#">Book Now!</a>
+                           <a href="#">Message</a>
+                           <a href="#">Apply Now!</a>
                         </div>
                      </div>
                      <div class="student-card">
-                        <div class="status">
-                           <div class="online pulseeffect-infi">
-                           </div>
+                        <div class="status status-online">
+                           <div class="online-w">
+                           </div> Online
                         </div>
                         <div class="profile">
                            <img src="images/person2.png" alt="Profile Picture">
@@ -107,7 +129,7 @@
                         </div>
                         <div class="tags">
                             
-                           <span>I need help with:</span>
+                            <p>I need help with:</p>
                             <div>
                                 <div class="tag">CyberSecurity</div>
                                 <div class="tag">Analytics</div>
@@ -116,116 +138,49 @@
                             </div>
                             </div>
                        
-                        <div class="actions">
+                        <div class="th-actions">
                            <a href="#">View Profile</a>
                            <a href="#">Message</a>
                            <a href="#">Apply Now!</a>
                         </div>
                      </div>
                      <div class="student-card">
-                        <div class="status">
-                           <div class="online pulseeffect-infi">
-                           </div>
-                        </div>
-                        <div class="profile">
-                           <img src="images/person4.png" alt="Profile Picture">
-                           <div>
-                              <div class="name">
-                                 Donald G. 
-                                 <div class="verified"></div>
-                              </div>
-                              <div class="title">Robotics (Bachelor of Computer Science)</div>
-                           </div>
-                        </div>
-                        <div class="actions">
-                           <a href="#">View Profile</a>
-                           <a href="#">Send Message</a>
-                           <a href="#">Book Now!</a>
-                        </div>
-                     </div>
-                     <div class="student-card">
-                        <div class="status">
-                           <div class="online pulseeffect-infi">
-                           </div>
+                        <div class="status status-offline">
+                           <div class="online-w">
+                           </div>Offline
                         </div>
                         <div class="profile">
                            <img src="images/person2.png" alt="Profile Picture">
                            <div>
+                            <div class="ineedhelp-msg">"Hi, I'm looking for a tutor for CyberSecurity Management. Please message me."</div>
                               <div class="name">
-                                 Donald G. 
+                                 Mike R. 
                                  <div class="verified"></div>
                               </div>
-                              <div class="title">Robotics (Bachelor of Computer Science)</div>
+                             
                            </div>
                         </div>
-                        <div class="actions">
+                        <div class="tags">
+                            
+                           <p>I need help with:</p>
+                            <div>
+                                <div class="tag">CyberSecurity</div>
+                                <div class="tag">Analytics</div>
+
+
+                            </div>
+                            </div>
+                       
+                        <div class="th-actions">
                            <a href="#">View Profile</a>
-                           <a href="#">Send Message</a>
-                           <a href="#">Book Now!</a>
+                           <a href="#">Message</a>
+                           <a href="#">Apply Now!</a>
                         </div>
                      </div>
-                     <div class="student-card">
-                        <div class="status">
-                           <div class="online pulseeffect-infi">
-                           </div>
-                        </div>
-                        <div class="profile">
-                           <img src="images/person4.png" alt="Profile Picture">
-                           <div>
-                              <div class="name">
-                                 Donald G. 
-                                 <div class="verified"></div>
-                              </div>
-                              <div class="title">Robotics (Bachelor of Computer Science)</div>
-                           </div>
-                        </div>
-                        <div class="actions">
-                           <a href="#">View Profile</a>
-                           <a href="#">Send Message</a>
-                           <a href="#">Book Now!</a>
-                        </div>
-                     </div>
-                     <div class="student-card">
-                        <div class="status">
-                           <div class="online pulseeffect-infi">
-                           </div>
-                        </div>
-                        <div class="profile">
-                           <img src="images/person1.png" alt="Profile Picture">
-                           <div>
-                              <div class="name">
-                                 Donald G. 
-                                 <div class="verified"></div>
-                              </div>
-                              <div class="title">Robotics (Bachelor of Computer Science)</div>
-                           </div>
-                        </div>
-                        <div class="actions">
-                           <a href="#">View Profile</a>
-                           <a href="#">Send Message</a>
-                           <a href="#">Book Now!</a>
-                        </div>
-                     </div>
-                     <div class="student-card">
-                        <div class="status">
-                           <div class="online pulseeffect-infi">
-                           </div>
-                        </div>
-                        <div class="profile">
-                           <img src="images/person2.png" alt="Profile Picture">
-                           <div>
-                              <div class="name">
-                                 Donald G. 
-                                 <div class="verified"></div>
-                              </div>
-                              <div class="title">Robotics (Bachelor of Computer Science)</div>
-                           </div>
-                        </div>
-                        <div class="actions">
-                           <a href="#">View Profile</a>
-                           <a href="#">Send Message</a>
-                           <a href="#">Book Now!</a>
-                        </div>
+
+                    
+                        
+                       
                      </div>
                   </div>
                </div>
