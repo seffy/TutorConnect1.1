@@ -59,12 +59,22 @@ app.get('/teacher-homepage', (req, res) => {
   res.sendFile(path.join(__dirname, 'View', 'teacherHomepage.html')); // Teacher homepage
 });
 
+<<<<<<< Updated upstream
 // User Profile
 app.get('/profile', (req, res) => {
   res.sendFile(path.join(__dirname, 'View', 'profile.html')); // User Profile 
 });
 
 
+=======
+// User Profile Homepage
+app.get('/user-profile', (req, res) => {
+  res.sendFile(path.join(__dirname, 'View', 'userprofile.html')); // User Profile homepage
+});
+
+
+
+>>>>>>> Stashed changes
 // Handle Login Requests
 app.post('/api/login', async (req, res) => {
   const { email, password } = req.body;

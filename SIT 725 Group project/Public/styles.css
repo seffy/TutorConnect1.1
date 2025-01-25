@@ -793,7 +793,9 @@ padding: 20px;
   display: flex;
   flex-wrap: wrap;
   gap: 10px; /* Space between buttons */
-  justify-content: flex-start; /* Align items to the left */
+  justify-content: stretch; /* Align items to the left */
+  
+  
   padding: 20px;
 }
 .cat-btn {
@@ -819,8 +821,8 @@ padding: 20px;
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: calc(33.333% - 20px); /* 3 cards per row with spacing */
-  max-width: 300px; /* Prevent overly large cards */
+  width: calc(25% - 20px); /* 3 cards per row with spacing */
+  min-width: 300px; /* Prevent overly large cards */
   padding: 20px;
   text-align: left;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -909,6 +911,7 @@ padding: 20px;
   color: var(--gray3);
   font-weight: bold;
   cursor: pointer;
+
 }
 
 .actions a:hover {
@@ -918,6 +921,8 @@ padding: 20px;
 
 .th-actions {
   width: 90%;
+  display: flex;
+  justify-content: space-between;
   position: absolute;
  bottom: 20px;
   border-top: 1px solid #ddd;
