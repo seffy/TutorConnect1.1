@@ -8,7 +8,7 @@ TutorConnect is a platform designed to connect students who need academic assist
 
 ## Features
 
-- **Real-Time Tutor Matching**: Students can find available tutors on their campus in real-time.
+- **Real-Time Tutor Matching**: Students can find available peer tutors in real-time.
 - **Post Requests**: Students can post requests for specific subjects or topics.
 - **Offer Tutoring Services**: Peer tutors can create profiles and advertise their expertise.
 - **Messaging System**: Secure and private communication between students and tutors.
