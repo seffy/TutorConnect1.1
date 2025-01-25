@@ -59,6 +59,12 @@ app.get('/teacher-homepage', (req, res) => {
   res.sendFile(path.join(__dirname, 'View', 'teacherHomepage.html')); // Teacher homepage
 });
 
+// User Profile
+app.get('/profile', (req, res) => {
+  res.sendFile(path.join(__dirname, 'View', 'profile.html')); // User Profile 
+});
+
+
 // Handle Login Requests
 app.post('/api/login', async (req, res) => {
   const { email, password } = req.body;
