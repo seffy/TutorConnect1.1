@@ -567,16 +567,17 @@ button {
   background-repeat: no-repeat;
 }
 
-.sh-hero {
-  background-color: #D9F6FA;
-  padding: 50px 20px;
-  min-height: 60vh;
-}
+
 
 .sh-hero{
 
+  padding: 50px 20px;
+  min-height: 70vh;
   background-attachment: fixed;
-  background-position: center center;
+  background-position: center bottom!important;
+
+
+  
 
 }
 
@@ -785,6 +786,15 @@ button {
   background-size: cover;
   background-repeat: no-repeat;
 }
+.img-13 {
+
+  background-image: url('images/13.jpg');
+  background-position: center right;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+}
+
 
 /* Testimonials Section */
 .testimonials {
@@ -1228,7 +1238,7 @@ button {
 .border-radius-10 {
   border-radius: 10px;
 }
-
+  
 .lessons {
 
     justify-content: center; /* Center vertically */
@@ -1242,7 +1252,7 @@ button {
 }
 
 .lessons div.column {
-background-color: #fafafa40;
+background-color: #ffffff;
 
 }
 
