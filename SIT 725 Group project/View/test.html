@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Student Dashboard</title>
+      <link rel="stylesheet" href="/styles.css">
+      <link rel="stylesheet" href="/views.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   </head>
+   <body>
+      <nav class="navbar bg-darkblue text-color-w">
+         <div class="nav-container">
+            <a href="#" class="logo text-color-w">TutorConnect</a>
+            <ul class="nav-links">
+               <li>
+                  <a href="#">
+                     Messages
+                     <div class="newmsg">1</div>
+                  </a>
+               </li>
+               <li><a href="#">My Profile</a></li>
+              
+               <li>My Student Dashboard <a class="btn-change bg-gray5" href="/teacher-homepage">Change</a></li>
+               <li><a href="/" class="btn-primary bg-gray3">Logout <i class="fa fa-sign-out" aria-hidden="true" ></i></a></li>
+            </ul>
+         </div>
+      </nav>
+      <div class="home-container">
+         <div class="second-container">
+            <h3 class="title">Welcome back, {NAME}! </h3>
+            <section class="s-section img-11 border-radius">
+               <div class="s-container">
+            
+
+                  <div class="upcomingsessions"><h1>Upcoming Lessons!</h1></div>
+                  <div class="lessons">
+                  
+                     <div class="row">
+
+                        <div class="column padding-10 border-radius-10">
+                        <div class="lesson-card ">
+                           <div class="lesson-info lesson-row">
+                              <div class="lesson-column">
+                              <div class="lesson-date">Date: 12/12/2021</div>
+                              <div class="lesson-time">Time: 12:00 PM</div>
+                              <div class="lesson-subject">Lesson: Math</div>
+                           </div>
+                           <div class="lesson-column align-items-right">
+                              <div class=" btn-primary bg-darkblue text-color-w"><i class="fa fa-comment" aria-hidden="true"></i> <span class="btn-title">Message</span></div>
+                              <div class=" btn-primary bg-gray5 text-color-w"><i class="fa fa-video-camera" aria-hidden="true"></i> <span class="btn-title">Video Link</span></div>
+                           </div>
+                           </div>
+                        </div>
+                        </div>
+                        <div class="column padding-10 border-radius-10">
+                           <div class="lesson-card ">
+                              <div class="lesson-info lesson-row">
+                                 <div class="lesson-column">
+                                 <div class="lesson-date">Date: 12/12/2021</div>
+                                 <div class="lesson-time">Time: 12:00 PM</div>
+                                 <div class="lesson-subject">Lesson: Math</div>
+                              </div>
+                              <div class="lesson-column align-items-right">
+                                 <div class=" btn-primary bg-darkblue text-color-w"><i class="fa fa-comment" aria-hidden="true"></i> <span class="btn-title">Message</span></div>
+                                 <div class=" btn-primary bg-gray5 text-color-w"><i class="fa fa-video-camera" aria-hidden="true"></i> <span class="btn-title">Video Link</span></div>
+                              </div>
+                              </div>
+                           </div>
+                           </div>
+
+                           <div class="column padding-10 border-radius-10">
+                              <div class="lesson-card ">
+                                 <div class="lesson-info lesson-row">
+                                    <div class="lesson-column">
+                                    <div class="lesson-date">Date: 12/12/2021</div>
+                                    <div class="lesson-time">Time: 12:00 PM</div>
+                                    <div class="lesson-subject">Lesson: Math</div>
+                                 </div>
+                                 <div class="lesson-column align-items-right">
+                                    <div class=" btn-primary bg-darkblue text-color-w"><i class="fa fa-comment" aria-hidden="true"></i> <span class="btn-title">Message</span></div>
+                                    <div class=" btn-primary bg-gray5 text-color-w"><i class="fa fa-video-camera" aria-hidden="true"></i> <span class="btn-title">Video Link</span></div>
+                                 </div>
+                                 </div>
+                              </div>
+                              </div>
+                       
+                      </div>
+
+                  </div>
+                  <div class="completedsessions margin-top"><h1>Completed Lessons!</h1></div>
+
+               </div>
+            </section>
+
+            <section>
+               <div class="sh-category">
+                  <h2 class="title">Peer Tutors</h2>
+                  <div class="dropdown" id="dropdown">
+                     <div class="dropdown-btn" onclick="toggleDropdown()">Specialties <span id="counter">0</span></div>
+                     <div class="dropdown-content">
+                        <ul class="checkbox-list">
+                           <li>
+                              <label><input type="checkbox" class="checkbox" > Unit 1</label>
+                           </li>
+                           <li>
+                              <label><input type="checkbox" class="checkbox" > Unit 2</label>
+                           </li>
+                           <li>
+                              <label><input type="checkbox" class="checkbox"> Unit 3</label>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+
+
+                 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                  <div class="flex-container">
+                     <div class="tutor-card">
+                        <div class="status status-online">
+                           <div class="online-w">
+                           </div> Online
+                        </div>
+                        <div class="profile">
+                           <img src="images/person2.png" alt="Profile Picture">
+                           <div>
+                              <div class="name">
+                                 {Tutor Name}
+                                 <div class="verified"></div>
+                              </div>
+                              <div class="title"> {Degree}</div>
+                           </div>
+                        </div>
+                        <div class="actions">
+                           <a class="btn-profile" href="teacher-homepage/profile">View Profile</a>
+                           <a href="#">Send Message</a>
+                           <a href="#">Book Now!</a>
+                        </div>
+                     </div>
+                     <div class="tutor-card">
+                        <div class="status status-online">
+                           <div class="online-w">
+                           </div> Online
+                        </div>
+                        <div class="profile">
+                           <img src="images/person2.png" alt="Profile Picture">
+                           <div>
+                              <div class="name">
+                                 Donald G. 
+                                 <div class="verified"></div>
+                              </div>
+                              <div class="title">Robotics (Bachelor of Computer Science)</div>
+                           </div>
+                        </div>
+                        <div class="actions">
+                           <a href="#">View Profile</a>
+                           <a href="#">Send Message</a>
+                           <a href="#">Book Now!</a>
+                        </div>
+                     </div>
+                     <div class="tutor-card">
+                        <div class="status status-online">
+                           <div class="online-w">
+                           </div> Online
+                        </div>
+                        <div class="profile">
+                           <img src="images/person4.png" alt="Profile Picture">
+                           <div>
+                              <div class="name">
+                                 Donald G. 
+                                 <div class="verified"></div>
+                              </div>
+                              <div class="title">Robotics (Bachelor of Computer Science)</div>
+                           </div>
+                        </div>
+                        <div class="actions">
+                           <a href="#">View Profile</a>
+                           <a href="#">Send Message</a>
+                           <a href="#">Book Now!</a>
+                        </div>
+                     </div>
+                     <div class="tutor-card">
+                        <div class="status status-online">
+                           <div class="online-w">
+                           </div> Online
+                        </div>
+                        <div class="profile">
+                           <img src="images/person2.png" alt="Profile Picture">
+                           <div>
+                              <div class="name">
+                                 Donald G. 
+                                 <div class="verified"></div>
+                              </div>
+                              <div class="title">Robotics (Bachelor of Computer Science)</div>
+                           </div>
+                        </div>
+                        <div class="actions">
+                           <a href="#">View Profile</a>
+                           <a href="#">Send Message</a>
+                           <a href="#">Book Now!</a>
+                        </div>
+                     </div>
+                     <div class="tutor-card">
+                        <div class="status status-online">
+                           <div class="online-w">
+                           </div> Online
+                        </div>
+                        <div class="profile">
+                           <img src="images/person4.png" alt="Profile Picture">
+                           <div>
+                              <div class="name">
+                                 Donald G. 
+                                 <div class="verified"></div>
+                              </div>
+                              <div class="title">Robotics (Bachelor of Computer Science)</div>
+                           </div>
+                        </div>
+                        <div class="actions">
+                           <a href="#">View Profile</a>
+                           <a href="#">Send Message</a>
+                           <a href="#">Book Now!</a>
+                        </div>
+                     </div>
+                     <div class="tutor-card">
+                        <div class="status status-online">
+                           <div class="online-w">
+                           </div> Online
+                        </div>
+                        <div class="profile">
+                           <img src="images/person1.png" alt="Profile Picture">
+                           <div>
+                              <div class="name">
+                                 Donald G. 
+                                 <div class="verified"></div>
+                              </div>
+                              <div class="title">Robotics (Bachelor of Computer Science)</div>
+                           </div>
+                        </div>
+                        <div class="actions">
+                           <a href="#">View Profile</a>
+                           <a href="#">Send Message</a>
+                           <a href="#">Book Now!</a>
+                        </div>
+                     </div>
+                     <div class="tutor-card">
+                        <div class="status status-online">
+                           <div class="online-w">
+                           </div> Online
+                        </div>
+                        <div class="profile">
+                           <img src="images/person2.png" alt="Profile Picture">
+                           <div>
+                              <div class="name">
+                                 Donald G. 
+                                 <div class="verified"></div>
+                              </div>
+                              <div class="title">Robotics (Bachelor of Computer Science)</div>
+                           </div>
+                        </div>
+                        <div class="actions">
+                           <a href="#">View Profile</a>
+                           <a href="#">Send Message</a>
+                           <a href="#">Book Now!</a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </section>
+         </div>
+
+
+
+      </div>
+      <script>
+         function toggleDropdown() {
+           const dropdown = document.getElementById('dropdown');
+           dropdown.classList.toggle('open');
+         }
+         
+         // Update counter dynamically
+         function updateCounter() {
+           const checkboxes = document.querySelectorAll('.checkbox');
+           const counter = document.getElementById('counter');
+           const selectedCount = Array.from(checkboxes).filter(checkbox => checkbox.checked).length;
+           counter.textContent = `(${selectedCount})`;
+         }
+         
+         // Add event listeners to checkboxes
+         const checkboxes = document.querySelectorAll('.checkbox');
+         checkboxes.forEach(checkbox => {
+           checkbox.addEventListener('change', updateCounter);
+         });
+         
+         // Close the dropdown if clicked outside
+         window.onclick = function(event) {
+           if (!event.target.matches('.dropdown-btn')) {
+             const dropdown = document.getElementById('dropdown');
+             dropdown.classList.remove('open');
+           }
+         };
+         
+         // Initialize the counter on page load
+         updateCounter();
+      </script>
+   </body>
+</html>
