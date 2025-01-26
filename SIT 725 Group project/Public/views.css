@@ -89,3 +89,17 @@ text-align: center;
 
 
 }
+
+
+@media (width <= 900px) {
+  .nav-left > .nav-menu {
+    display: none;
+  }
+  .nav-right > * {
+    display: none;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+}
