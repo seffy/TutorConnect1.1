@@ -291,6 +291,7 @@ width: 100%;
 .dropdown-container {
   position: relative;
   overflow: visible;
+  min-width: 250px;
 }
 
 .dropdown-menu {
@@ -1209,7 +1210,7 @@ button {
 }
 
 .status-online {
-  background-color: #56c596;
+  background-color: forestgreen;
   /* Green online status */
 }
 
@@ -1331,7 +1332,7 @@ button {
 
 
 .online {
-  background-color: #56c596;
+  background-color: forestgreen;
   /* Green online status */
   border-radius: 99px;
   width: 10px;
@@ -1732,6 +1733,7 @@ margin: 20px;
   width: 45px;
   font-size: 11px;
   text-align: center;
+  display: inline;
 }
 
 
@@ -1755,3 +1757,7 @@ margin: 20px;
 
 }
 
+.theurgency {
+  display: inline;
+  font-size: 14px;
+}

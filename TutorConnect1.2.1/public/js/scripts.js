@@ -34,69 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
   });
   
-
-
-  /*
-  
-
-  document.addEventListener('DOMContentLoaded', () => {
-    fetch('/api/recent-requests')
-      .then(response => response.json())
-      .then(data => {
-        const requestsList = document.getElementById('requestsList');
-        requestsList.innerHTML = ""; // Clear previous content
-
-        if (data.length === 0) {
-          requestsList.innerHTML = "<p>No open requests available.</p>";
-          return;
-        }
-
-        data.forEach(request => {
-          const requestItem = document.createElement("div");
-          requestItem.classList.add("request-item");
-          requestItem.innerHTML = `<div class="tutor-student-card">
-  <div class="status status-offline">
-    <div class="online-w">
-    </div>
-    <span>${request.status}</span>
-  </div>
-  <div class="profile">
-    <img src="images/person2.png" alt="Profile Picture">
-    <div>
-      <div class="ineedhelp-msg">${request.message}</div>
-       <p><strong>Date:</strong> ${new Date(request.createdAt).toLocaleString()}</p>
-      <div class="tutorname">
-      ${request.studentID}
-        <div class="verified"></div>
-      </div>
-      <div><strong>Urgency:</strong> <div class="urgencystatus">${request.urgency}</div></div>
-    </div>
-  </div>
-  <div class="tags">
-    <p>I need help with:</p>
-    <div>
-      <div class="tag">CyberSecurity</div>
-      <div class="tag">Analytics</div>
-    </div>
-  </div>
-  <div class="th-actions">
-    <a href="#">View Profile</a>
-    <a href="#">Message</a>
-    <a href="#">Apply Now!</a>
-  </div>
-</div>`;
-          requestsList.appendChild(requestItem);
-        });
-      })
-      .catch(error => {
-        console.error('Error fetching requests:', error);
-        document.getElementById('requestsList').innerHTML = "<p>Error loading requests.</p>";
-      });
-  });
-  
-  */
-
-
   document.addEventListener('DOMContentLoaded', () => {
     fetch('/api/recent-requests')
       .then(response => response.json())
@@ -120,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
             requestItem.classList.add("request-item");
             requestItem.innerHTML = `
               <div class="tutor-student-card">
-                <div class="status status-offline">
+                <div class="status status-online">
                   <div class="online-w"></div>
                   <span>${request.status}</span>
                 </div>
@@ -137,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
                       ${studentName}
                       <div class="verified"></div>
                     </div>
-                    <div><strong>Urgency:</strong> <div class="urgencystatus">${request.urgency}</div></div>
+                    <div class="theurgency"><strong>Urgency:</strong> <div class="urgencystatus">${request.urgency}</div></div>
                   </div>
                 </div>
                <p>&nbsp;</p>
