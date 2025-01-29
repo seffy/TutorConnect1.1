@@ -1,11 +1,16 @@
 const mongoose = require('mongoose');
 
-// Requests Schema
+
+
+// Define Request Schema
 const requestSchema = new mongoose.Schema({
   studentID: { type: String, required: true },
   message: { type: String, required: true },
-  urgency: { type: String, enum: ['Low', 'Medium', 'High'], required: true },
+  urgency: { type: String, enum: ['Now', 'Normal'], required: true },
+  status: { type: String, enum: ['Open', 'Closed'], required: true, default: 'Open' },
+  createdAt: { type: Date, default: Date.now }, // Record date and time automatically
 });
+
 const Request = mongoose.model('Request', requestSchema);
 
 // Conversations Schema
@@ -22,7 +27,7 @@ const Conversation = mongoose.model('Conversation', conversationSchema);
 const tutorSchema = new mongoose.Schema({
   tutorID: { type: String, required: true },
   name: { type: String, required: true },
-  empStatus: { type: String, enum: ['Full-Time', 'Part-Time', 'Contract'], required: true },
+  empStatus: { type: String, enum: ['Active', 'Inactive'], required: true },
 });
 const Tutor = mongoose.model('Tutor', tutorSchema);
 
@@ -32,7 +37,7 @@ const sessionSchema = new mongoose.Schema({
   tutorID: { type: String, required: true },
   topicTitle: { type: String, required: true },
   schedule: { type: Date, required: true },
-  status: { type: String, enum: ['Scheduled', 'Completed', 'Cancelled'], required: true },
+  status: { type: String, enum: ['Open', 'Closed', 'Cancelled'], required: true },
 });
 const Session = mongoose.model('Session', sessionSchema);
 

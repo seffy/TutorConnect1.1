@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tutor Page</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+	<div class="tu-container">
+    <h1><strong>tutorConenct</strong></h1>
+    <div id="tutorInfo">
+      <p>Checking your tutor status...</p>
+    </div>
+    
+    <!-- Registration Form (Hidden by Default) -->
+    <div id="registerTutor" class="registerTutor" >
+		<div>
+      <h3>You are currently not registered as a Tutor.</h3>
+			</div>
+		<div>
+      
+      <button id="cancelButton" class="btn-primary bg-gray170">Cancel</button>
+			<button id="registerButton" class="btn-primary bg-orange">Register</button>
+			</div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+  fetch('/api/check-tutor')
+    .then(response => response.json())
+    .then(data => {
+      if (data.exists) {
+        // Redirect to tutor homepage if already a tutor
+        window.location.href = '/tutorhomepage';
+      } else {
+        // Show the registration form if not a tutor
+        document.getElementById('tutorInfo').style.display = 'none';
+        document.getElementById('registerTutor').style.display = 'block';
+      }
+    })
+    .catch(error => {
+      console.error('Error checking tutor status:', error);
+      document.getElementById('tutorInfo').innerHTML = '<p>Error checking status.</p>';
+    });
+
+  // Register as a tutor
+  document.getElementById('registerButton').addEventListener('click', () => {
+    fetch('/api/register-tutor', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' }
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.success) {
+        alert('You are now registered as a tutor!');
+        window.location.href = '/tutorhomepage'; // Redirect after successful registration
+      } else {
+        alert('Error: ' + data.message);
+      }
+    })
+    .catch(error => {
+      console.error('Error registering:', error);
+    });
+  });
+
+  // Cancel registration
+  document.getElementById('cancelButton').addEventListener('click', () => {
+    window.location.href = '/homepage';
+  });
+});
+  </script>
+</body>
+</html>

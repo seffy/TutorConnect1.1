@@ -63,7 +63,23 @@
       }
 
 
+      .welcomebacktitle {
+        display: none;
+       }
 
+       .upcomingsessions, .completedsessions, .requestssessions {
+       width: 90%;
+      }
+      .sh-hero-container {
+        width: 100%;
+        margin: 0 auto;
+        position: relative;
+      
+      }
+
+      .upcon {
+    display: none;
+      }
 
 }
 
@@ -73,6 +89,10 @@
     width: 98%;
     margin: 0 auto;
     position: relative;
+  }
+
+  .welcomebacktitle {
+   display: none;
   }
 
 }
@@ -87,7 +107,11 @@ text-align: center;
   text-align: center;
 }
 
+.hideinmob {
+  display: none;
 
+
+}
 }
 
 
