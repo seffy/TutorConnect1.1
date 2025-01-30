@@ -11,9 +11,9 @@ const app = express();
 const PORT = 3000;
 
 // MongoDB connection
-mongoose.connect('mongodb://localhost:27017/auth_demo');
+//mongoose.connect('mongodb://localhost:27017/auth_demo');
 
-//mongoose.connect('mongodb+srv://admin:admin13@cluster0.y0r9q.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0');
+mongoose.connect('mongodb+srv://admin:admin13@cluster0.y0r9q.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0');
 
 
 const db = mongoose.connection;
