@@ -354,15 +354,10 @@ app.get('/api/student-info', isAuthenticated, async (req, res) => {
   }
 });
 
-
-
-
 // Route to display tutor homepage
 app.get('/tutorhomepage', isAuthenticated, (req, res) => {
   res.sendFile(path.join(__dirname, 'views', 'tutorhomepage.html'));
 });
-
-
 
 // Add Session
 
