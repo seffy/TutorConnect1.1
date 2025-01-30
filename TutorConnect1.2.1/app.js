@@ -13,6 +13,9 @@ const PORT = 3000;
 // MongoDB connection
 mongoose.connect('mongodb://localhost:27017/auth_demo');
 
+//mongoose.connect('mongodb+srv://admin:admin13@cluster0.y0r9q.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0');
+
+
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', () => console.log('Connected to MongoDB'));
@@ -126,6 +129,64 @@ app.get('/tutor', isAuthenticated, async (req, res) => {
 
 
 // API route to fetch the most recent request
+
+app.get('/api/recent-request', isAuthenticated, async (req, res) => {
+  try {
+    const studentEmail = req.session.email; // Get logged-in user's email
+    const recentRequest = await Request.findOne({ studentID: studentEmail, status: 'Open' }).sort({ createdAt: -1 });
+
+    if (recentRequest) {
+      res.json({
+        message: recentRequest.message,
+        urgency: recentRequest.urgency,
+        status: recentRequest.status,
+        date: recentRequest.createdAt.toLocaleString() // Format the date
+      });
+    } else {
+      res.json({
+        message: 'No open requests.',
+        urgency: 'N/A',
+        status: 'N/A',
+        date: 'N/A'
+      });
+    }
+  } catch (error) {
+    console.error('Error fetching recent request:', error);
+    res.status(500).json({
+      message: 'Error fetching recent request.',
+      urgency: 'N/A',
+      status: 'Error',
+      date: 'Error'
+    });
+  }
+}); 
+
+/*
+app.get('/api/recent-request', isAuthenticated, async (req, res) => {
+  try {
+    const studentEmail = req.session.email; // Get logged-in user's email
+    const userRequests = await Request.find({ studentID: studentEmail }).sort({ createdAt: -1 });
+
+    if (userRequests.length > 0) {
+      const formattedRequests = userRequests.map(request => ({
+        message: request.message,
+        urgency: request.urgency,
+        status: request.status,
+        date: request.createdAt.toLocaleString()
+      }));
+
+      res.json(formattedRequests);
+    } else {
+      res.json([]); // Return empty array if no requests are found
+    }
+  } catch (error) {
+    console.error('Error fetching user requests:', error);
+    res.status(500).json({ error: 'Error fetching user requests' });
+  }
+});
+
+*/
+
 app.get('/api/recent-request', isAuthenticated, async (req, res) => {
   try {
     const studentEmail = req.session.email; // Get logged-in user's email
@@ -156,6 +217,14 @@ app.get('/api/recent-request', isAuthenticated, async (req, res) => {
     });
   }
 });
+
+
+
+
+
+
+
+
 
 
 app.get('/logout', (req, res) => {
@@ -295,9 +364,49 @@ app.get('/tutorhomepage', isAuthenticated, (req, res) => {
 
 
 
+// Add Session
 
+app.post('/api/add-session', isAuthenticated, async (req, res) => {
+  try {
+    const { topicTitle, date, timeStart, endTime, status } = req.body;
+    const tutorID = req.session.email; // Get logged-in tutor's email
 
+    // Generate a unique 6-digit sessionID
+    const sessionID = Math.floor(100000 + Math.random() * 900000).toString();
 
+    // Create a new session entry
+    const newSession = new Session({
+      sessionID,
+      tutorID,
+      topicTitle,
+      date: new Date(date),
+      timeStart,
+      endStart: endTime,
+      status
+    });
+
+    await newSession.save();
+    res.json({ success: true, message: 'Session created successfully!' });
+
+  } catch (error) {
+    console.error('Error adding session:', error);
+    res.status(500).json({ success: false, message: 'Error adding session' });
+  }
+});
+
+//fetch all sessions
+
+app.get('/api/sessions', isAuthenticated, async (req, res) => {
+  try {
+    const tutorID = req.session.email; // Get the logged-in tutor's email
+    const sessions = await Session.find({ tutorID }).sort({ date: -1 });
+
+    res.json(sessions);
+  } catch (error) {
+    console.error('Error fetching tutor sessions:', error);
+    res.status(500).json({ error: 'Error fetching tutor sessions' });
+  }
+});
 
 
 

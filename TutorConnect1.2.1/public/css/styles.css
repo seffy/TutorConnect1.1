@@ -1440,12 +1440,7 @@ button {
 }
 
 
-.ineedhelp-msg {
-  font-size: 14px;
-  font-style: italic;
-  padding: 10px;
 
-}
 
 .margin-bottom {
   margin-bottom: 20px;
@@ -1473,7 +1468,7 @@ button {
 }
 
 .upcomingsessions, .completedsessions, .requestssessions {
-  margin: 20px;
+  margin: 10px;
   
 
 }
@@ -1760,4 +1755,97 @@ margin: 20px;
 .theurgency {
   display: inline;
   font-size: 14px;
+}
+
+
+.request-card, .session-card {
+  background-color: #fff;
+  border-radius: 10px;
+  min-width: 280px;
+  width: calc(25% - 0px);
+  /* 3 cards per row with spacing */
+  /* Prevent overly large cards */
+  padding: 15px;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  margin: 5px;
+}
+
+.request-card .message {
+  margin-bottom: 10px;
+}
+
+.request-card .messagedetails {
+  font-size: 12px;
+  color: gray;
+}
+
+.messagedetails p{
+  font-size: 12px;
+  color: gray;
+}
+
+.request-card .btn {
+  font-size: 12px; 
+  margin: 10px;
+  padding: 8px;
+  border-radius: 50px;
+  color: #fafafa;
+ 
+}
+
+.requestdetails {
+  font-size: 15px; 
+}
+
+.ineedhelp-msg {
+  font-size: 16px;
+  font-style: italic;
+  padding: 10px;
+  background-color:var(--gray7);
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+
+}
+       
+            
+.tutorform-container  label {
+  display: block;
+  margin: 10px 0 5px;
+  font-size: 16px;
+}
+.tutorform-container  input, select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+
+}
+
+.topicstatus {
+width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  height: 40px;
+
+}
+
+
+.tutorform-container .inline {
+  display: flex;
+  justify-content: space-between;
+}
+.tutorform-container  .inline > div {
+  flex: 1;
+  margin-right: 10px;
+}
+.tutorform-container .inline > div:last-child {
+  margin-right: 0;
 }
