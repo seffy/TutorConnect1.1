@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Login / Register</title>
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="/styles.css">
+   </head>
+   <body>
+      <div class="container">
+         <div class="login-container">
+            <!-- Left Column -->
+            <div class="left-column" id="leftColumn">
+               <div class="log-logo"><a href="/" class="logo text-color-w90">TutorConnect</a></div>
+               <h1>Empowering Minds, Connecting Learners.</h1>
+               <div><span style="font-size: 22px;">Your Gateway to Smarter Learning</span></div>
+               <div class="spacer"></div>
+            </div>
+            <!-- Right Column -->
+            <div class="right-column">
+               <!---- LOGIN --->
+               <div id="loginForm" class="form-container">
+                  <h2 class="title">Welcome Back</h2>
+                  <form action="/api/login" method="POST">
+                     <div id="invalidcred" class="error-message"></div>
+                     <div class="input-group">
+                        <input class="input" required autocomplete="off" type="email" name="email" id="email">
+                        <label class="label" for="email">Email Address</label>
+                     </div>
+                     <div class="input-group">
+                        <input class="input" required autocomplete="off" id="password" name="password" type="password">
+                        <label class="label" for="password">Password</label>	  
+                     </div>
+                     <button class="bg-orange" type="submit">Login</button>
+                  </form>
+                  <br>
+                  <p>OR</p>
+                  <div class="sso-buttons">
+                     <button class="btn-google "><img  src="/images/icon-google.png" alt="GOOGLE">  Login with Google</button>
+                     <!-- <button class="btn-face"><img src="img/icon-face1.png"  alt="GOOGLE">Login with Facebook</button> --->
+                  </div>
+                  <div class="switch">
+                     Don’t have an account? <a href="#" onclick="toggleForms('registerForm')">Create an Account</a>
+                  </div>
+               </div>
+               <!---- CREATE AN ACCOUNT --->
+               <div id="registerForm1" class="form-container hidden">
+                  <h2>Create an Account</h2>
+                  <form action="/api/students/register" method="POST" id="registerForm">
+                     <div class="input-group">
+                        <input class="input" required autocomplete="off" type="text" name="name">
+                        <label class="label" for="username">Full Name</label>
+                     </div>
+                     <div id="errorregistermessage"></div>
+                     <div class="input-group">
+                        <input class="input" required autocomplete="off" type="email" name="email" id="regemail">
+                        <label class="label" for="email">Email Address</label>
+                     </div>
+                     <div id="error-message" class="error-message"></div>
+                     <div class="input-group">
+                        <input class="input" required autocomplete="off" id="newpassword" name="password" type="password">
+                        <label class="label" for="password">Password</label>	  
+                     </div>
+                     <div class="input-group">
+                        <input class="input" required autocomplete="off" id="confirmpassword" type="password">
+                        <label class="label" for="confirmpassword">Confirm Password</label>	  
+                     </div>
+                     <button type="submit" class="bg-orange">Register</button>
+                  </form>
+                  <div class="sso-buttons">
+                     <button class="btn-google "><img  src="/images/icon-google.png" alt="GOOGLE">  Sign up with Google</button>
+                     <!-- <button class="btn-face"><img src="img/icon-face1.png"  alt="GOOGLE">Login with Facebook</button> -->
+                  </div>
+                  <div class="switch">
+                     Already have an account? <a href="#" onclick="toggleForms('loginForm')">Login</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <script>
+         function toggleForms(formToShow) {
+                           const loginForm = document.getElementById('loginForm');
+                           const registerForm = document.getElementById('registerForm1');
+                           if (formToShow === 'loginForm') {
+                              loginForm.classList.remove('hidden');
+                              registerForm.classList.add('hidden');
+                           } else {
+                              registerForm.classList.remove('hidden');
+                              loginForm.classList.add('hidden');
+                           }
+                        }
+           
+      </script>
+      <script>
+         document.getElementById('registerForm').addEventListener('submit', async (event) => {
+           event.preventDefault(); // Prevent default form submission behavior
+         
+           const form = event.target;
+           const formData = new FormData(form);
+           const data = Object.fromEntries(formData.entries()); // Convert form data to an object
+         
+           const errorMessage = document.getElementById('errorregistermessage');
+           const passwordInput = document.getElementById('password'); // Assuming an input with ID 'password'
+         
+         
+           // Clear previous error messages
+           errorMessage.style.display = 'none';
+           errorMessage.textContent = '';
+           errorMessage.style.color = 'red';
+         
+           // Client-side password validation
+           const passwordValidationMessage = validatePassword(data.password);
+           if (passwordValidationMessage) {
+             errorMessage.style.display = 'block';
+             errorMessage.textContent = passwordValidationMessage;
+             return; // Stop form submission if validation fails
+           }
+         
+           try {
+             const response = await fetch('/api/students/register', {
+               method: 'POST',
+               headers: { 'Content-Type': 'application/json' },
+               body: JSON.stringify(data),
+             });
+         
+             if (response.status === 400) {
+               // Handle 400 error response
+               const result = await response.json();
+               errorMessage.style.display = 'block'; // Show error message div
+               errorMessage.textContent = result.message || 'An error occurred';
+             } 
+             else if (response.ok) {
+               // Redirect to success page on successful registration
+               window.location.href = '/register-success';
+             } else {
+               // Handle unexpected errors
+               console.error('Unexpected error:', response.status);
+               errorMessage.style.display = 'block';
+               errorMessage.textContent = 'An unexpected error occurred. Please try again.';
+             }
+           } catch (error) {
+             console.error('Error:', error.message);
+             errorMessage.style.display = 'block';
+             errorMessage.textContent = 'A network error occurred. Please try again.';
+           }
+         });
+         
+         // Password validation function
+         function validatePassword(password) {
+           const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+           const confirmPasswordInput = confirmpassword.value;
+           if (!password) {
+             return 'Password is required.';
+           }
+           if (!passwordRegex.test(password)) {
+             return 'Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, one number, and one special character.';
+           }
+           if (password !== confirmPasswordInput) {
+               return 'Passwords do not match.';
+            }
+         
+           return null; // Return null if password is valid
+         }
+      </script>
+      <script>
+         document.getElementById('loginForm').addEventListener('submit', async (event) => {
+           event.preventDefault(); // Prevent default form submission behavior
+         
+           const form = event.target;
+           const formData = new FormData(form);
+           const data = Object.fromEntries(formData.entries()); // Convert form data to an object
+         
+           const errorMessageCRED = document.getElementById('invalidcred');
+           
+           // Clear previous error messages
+           errorMessageCRED.style.display = 'none';
+           errorMessageCRED.textContent = '';
+           errorMessageCRED.style.color = 'red';
+         
+         
+           try {
+             const response = await fetch('/api/login', {
+               method: 'POST',
+               headers: { 'Content-Type': 'application/json' },
+               body: JSON.stringify(data),
+             });
+         
+             if (response.status === 401) {
+               // Handle 400 error response
+               const result = await response.json();
+               errorMessageCRED.style.display = 'block'; // Show error message div
+               errorMessageCRED.textContent = result.message || 'An error occurred';
+             } 
+             else if (response.ok) {
+               // Redirect to success page on successful registration
+               window.location.href = '/student-homepage';
+             } else {
+               // Handle unexpected errors
+               console.error('Unexpected error:', response.status);
+               errorMessageCRED.style.display = 'block';
+               errorMessageCRED.textContent = 'An unexpected error occurred. Please try again.';
+             }
+           } catch (error) {
+             console.error('Error:', error.message);
+             errorMessageCRED.style.display = 'block';
+             errorMessageCRED.textContent = 'A network error occurred. Please try again.';
+           }
+         });
+         
+         
+      </script>
+   </body>
+</html>

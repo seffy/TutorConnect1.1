@@ -1,0 +1,129 @@
+@media (max-width: 768px) {
+  .login-container {
+    flex-direction: column;
+    height: auto;
+    width: 90%;
+
+  }
+
+  .left-column {
+    height: 50vh;
+    padding: 20px;
+  }
+
+  .right-column {
+    padding: 20px;
+  }
+
+  .tutor-card,
+  .student-card {
+    display: block;
+    width: 100%;
+
+
+  }
+
+  .home-container {
+    width: 100%;
+
+  }
+
+  .second-container {
+    width: 90%;
+    margin: 100px auto;
+
+  }
+
+  .sh-hero-container {
+    width: 95%;
+ 
+  }
+
+  .row {
+    grid-template-columns: 1fr;
+    /* Stack columns as a single column */
+  }
+  .feat-row {
+    grid-template-columns: 1fr;
+    /* Stack columns as a single column */
+  }
+
+  .lesson-column div.btn-primary {
+    width: 100%;
+    text-align: left;
+  }
+
+  .lesson-column div.btn-primary .btn-title {
+    display:inline;
+    text-align: left;
+    }
+
+    .lesson-column div.btn-primary i {
+      text-align: left;
+      }
+
+
+      .welcomebacktitle {
+        display: none;
+       }
+
+       .upcomingsessions, .completedsessions, .requestssessions {
+       width: 90%;
+      }
+      .sh-hero-container {
+        width: 100%;
+        margin: 0 auto;
+        position: relative;
+      
+      }
+
+      .upcon {
+    display: none;
+      }
+
+}
+
+
+@media (max-width: 965px) {
+  .home-container {
+    width: 98%;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .welcomebacktitle {
+   display: none;
+  }
+
+}
+
+@media (max-width: 1140px) {
+.btn-title {
+display: none;
+text-align: center;
+}
+.lesson-column div.btn-primary {
+  width: 80%;
+  text-align: center;
+}
+
+.hideinmob {
+  display: none;
+
+
+}
+}
+
+
+@media (width <= 900px) {
+  .nav-left > .nav-menu {
+    display: none;
+  }
+  .nav-right > * {
+    display: none;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+}

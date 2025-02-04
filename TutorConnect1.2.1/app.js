@@ -11,9 +11,9 @@ const app = express();
 const PORT = 3000;
 
 // MongoDB connection
-//mongoose.connect('mongodb://localhost:27017/auth_demo');
+mongoose.connect('mongodb://localhost:27017/auth_demo');
 
-mongoose.connect('mongodb+srv://admin:admin13@cluster0.y0r9q.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0');
+// mongoose.connect('mongodb+srv://admin:admin13@cluster0.y0r9q.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0');
 
 
 const db = mongoose.connection;
@@ -322,6 +322,7 @@ app.post('/api/register-tutor', isAuthenticated, async (req, res) => {
 });
 
 // API to fetch recent open requests (one per student)
+/*
 app.get('/api/recent-requests', isAuthenticated, async (req, res) => {
   try {
     const recentRequests = await Request.aggregate([
@@ -336,7 +337,7 @@ app.get('/api/recent-requests', isAuthenticated, async (req, res) => {
     console.error('Error fetching recent requests:', error);
     res.status(500).json({ error: 'Error fetching recent requests' });
   }
-});
+}); */
 
 app.get('/api/student-info', isAuthenticated, async (req, res) => {
   try {
@@ -403,9 +404,22 @@ app.get('/api/sessions', isAuthenticated, async (req, res) => {
   }
 });
 
+/*
 
+app.get('/api/recent-requests', isAuthenticated, async (req, res) => {
+  try {
+    const studentEmail = req.session.email; // Get logged-in user's email
+    
+    // Find all requests submitted by the logged-in user
+    const userRequests = await Request.find({ studentID: studentEmail }).sort({ createdAt: -1 });
 
-
+    res.json(userRequests);
+  } catch (error) {
+    console.error('Error fetching user requests:', error);
+    res.status(500).json({ error: 'Error fetching user requests' });
+  }
+});
+*/
 
 
 
