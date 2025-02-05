@@ -31,28 +31,98 @@
 
 
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    min-height: 100vh;
-}
-
-
-
 body{
     font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #252831;
+
   height: 100vh;
-  color: #5a5b5b
+  color: #5a5b5b;
+	      min-height: 100vh;
+	
+}
+
+.bg-color-sky {
+	background-color: var(--skyblue);
+}
+
+.bg-color-grey1 {
+	background-color: var(--grey1);
+}
+
+		
+.bg-1{
+	background-image: url('../img/deakin_hub.jpg');
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	background-color: #333;
+	background-blend-mode: overlay;
+	
 }
 		
-		.bg-1{
-			width: 100%;
-    margin: 0;
-		}
-		
+	
+
+.bg-sky {
+  background-color: var(--skyblue, #D9F6FA);
+}
+
+.bg-darkblue {
+  background-color: var(--darkblue, #002677);
+}
+
+.bg-orange {
+  background-color: var(--orange, #FF612B);
+}
+
+.bg-warmwhite {
+  background-color: #FBF9F4;
+}
+
+.bg-gray1 {
+  background-color: var(--gray1, #222222);
+}
+
+.bg-gray170 {
+  background-color: var(--gray170, #22222270);
+}
+
+.bg-gray2 {
+  background-color: var(--gray2, #444444);
+}
+
+.bg-gray3 {
+  background-color: var(--gray3, #636363);
+}
+
+.bg-gray4 {
+  background-color: var(--gray4, #959595);
+}
+
+.bg-gray5 {
+  background-color: var(--gray5, #B3B3B3);
+}
+
+.bg-gray6 {
+  background-color: var(--gray6, #E0E0E0);
+}
+
+.bg-gray7 {
+  background-color: var(--gray7, #F5F5F5);
+}
+
+.text-color {
+  color: #5a5b5b;
+}
+
+.text-color-w {
+  color: var(--textcolor-w, #fafafa);
+}
+
+.text-color-w90 {
+  color: var(--textcolor-w, #fafafa90);
+}
+
 		
 		
 video#bgvid {
@@ -112,7 +182,7 @@ video#bgvid {
 
 
 .login-contaner form{
-    height: 520px;
+    min-height: 500px;
     width: 400px;
 
     position: absolute;
@@ -123,12 +193,16 @@ video#bgvid {
     backdrop-filter: blur(10px);
     background-color: rgba(0,0,0,0.01);
     box-shadow: 0 0 40px rgba(8,7,16,0.6);
-    padding: 50px 35px;
+    padding: 40px 35px;
 	  transition: 0.3s;
 }
 
 .login-contaner form:hover {
-	 background-color: rgba(0,0,0,0.70);
+	 /* background-color: rgba(0,0,0,0.70);*/
+	
+		background-color: var(--darkblue);
+	color: #333;
+	
 }
 
 
@@ -180,6 +254,10 @@ video#bgvid {
     cursor: pointer;
 }
 
+
+
+
+
 .login-contaner button:hover{
 
     color: #fff;
@@ -193,18 +271,26 @@ video#bgvid {
 
 
 
-
+.auth-container h2 {
+	margin: 10px 0;
+}
 
 
 .auth-container {
-    background: white;
+    background: #f5f5f5;
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     width: 90%;
     max-width: 400px;
     margin: 50px auto;
+	
+
+	
 }
+
+
+
 
 .form-group {
     margin-bottom: 1rem;
@@ -216,19 +302,51 @@ video#bgvid {
 }
 
 .form-group input, .form-group select {
-    width: 100%;
+   /* width: 100%;
     padding: 0.5rem;
     border: 1px solid #ddd;
-    border-radius: 4px;
+    border-radius: 4px; */
+	
+	
+	display: block;
+    height: 50px;
+    width: 100%;
+ 
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 300;
+	border: 1px solid #fff;
+	
+	
+	
 }
+
+
+#role option {
+	 font-size: 16px;
+
+	
+}
+select option.optionvalues {
+    font-size: 16px;
+    padding: 5px;
+    background: #5c5c5c;
+}
+
+
+
 
 button {
     width: 100%;
-    padding: 0.75rem;
     background-color: #007bff;
     color: white;
     border: none;
     border-radius: 4px;
+	    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 600;
     cursor: pointer;
 }
 
@@ -240,6 +358,7 @@ button:hover {
     color: red;
     margin-bottom: 1rem;
     display: none;
+	margin-top: 10px;
 }
 
 /* Dashboard Styles */
@@ -268,6 +387,7 @@ nav button {
     padding: 1rem;
     border-radius: 8px;
     margin-bottom: 2rem;
+	margin-top: 20px;
 }
 
 /* Teacher Status Indicators */
@@ -370,3 +490,31 @@ nav button {
 	text-align: center;
 	margin-bottom: 25px;
 }
+
+.signreg {
+	margin-top: 10px;
+}
+
+
+.colcontainer {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 20px;
+      gap: 20px;
+    }
+    .column {
+      flex: 1 1 calc(50% - 20px); /* Two columns with 20px gap */
+      background-color: #f0f8ff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    @media (max-width: 768px) {
+      .column {
+        flex: 1 1 100%; /* Stacks columns on smaller screens */
+      }
+
+
+		
+		
+	

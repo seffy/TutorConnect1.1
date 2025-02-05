@@ -7,7 +7,7 @@
     <title>Register</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<body class="bg-1">
     <div class="auth-container">
         <h2>Register</h2>
         <div id="error-message" class="error-message"></div>
@@ -24,15 +24,15 @@
             <div class="form-group">
                 <label for="role">Role</label>
                 <select id="role" required>
-                    <option value="learner">Learner</option>
-                    <option value="teacher">Teacher</option>
+                    <option value="learner" class="optionvalues">Learner</option>
+                    <option value="Teacher" class="optionvalues">Teacher</option>
                 </select>
             </div>
             <button type="submit">Register</button>
         </form>
 
         <div class="toggle-form">
-            <p>Already have an account? <a href="index.html">Login</a></p>
+            <p class="signreg">Already have an account? <a href="index.html">Login</a></p>
         </div>
     </div>
     <script src="js/config.js"></script>

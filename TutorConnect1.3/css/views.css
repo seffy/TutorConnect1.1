@@ -5,6 +5,7 @@
 	
 	.login-contaner {
 		width: 100%;
+		
 	}
 	
 	.login-contaner form:hover {
@@ -13,8 +14,8 @@
 
 	
 	.login-contaner form{
-    height: 520px;
-    width: 400px;
+
+    width: 90%;
     background-color: rgba(0,0,0,0.70);
     position: relative;
 		margin: 10% auto;
