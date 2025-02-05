@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+<head>
+
+    <title>Yow</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Cache-Control" content="no-cache"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Refresh" content="900000">
+    <link rel="stylesheet" href="https://www.oracle.com/webfolder/nes/lcs-cg/eng/cssx/style.css">
+
+        s
+</head>
+<body class="bg-1-5 i-body">
+    <div style="overflow: hidden;">
+        <video playsinline autoplay muted id="bgvid" style="opacity: .9; z-index: -50; " onended="myFunction()">
+            <source src="https://nlcorp.app.netsuite.com/core/media/media.nl?id=181448861&c=NLCORP&h=e72c6d9b232a2942eae1&_xt=.bin" type="video/mp4">
+        </video>
+        <div id="ihead" style="width: 100%;  height: 70px; position: fixed; margin: 0; top:0px; left: 0px; background-color: rgba(49,45,52,0.2); z-index: 1000;">
+            <div style=" width: 1216px; margin: 0 auto; ">
+                <div style="float: left;" class="o-logo">tutorConnect</div>
+            </div>
+        </div>
+        <div class="container-index" style="background-color: transparent; ">
+            <div class="text-white index-title" style="width: 100%; text-align: center; font-size: 60px; margin-top: 5%; " align="center">
+                <p align="center" class="welcome">
+                    <span style="font-size: 30px;">Welcome to TutorConnect</span>
+                </p>
+                <p class="lcs-title">Learning Cloud Support </p>
+            </div>
+            <p>&nbsp;</p>
+            <div style="margin-top: -40px;" id="row-main">
+                <div class="row" style="width: 800px; margin: 0 auto; text-align: center;" id="row-index">
+
+                    <!-------------- ULRIKE -------------->
+
+                    <!-------------- STARTER TIMELINE -------------->
+                    <!-- <div class="column-4 cursor" onClick="location.href='lcs_startertimeline.htm';">
+                    					<div id="b1" >
+                                         <div class="index-icon"></div>
+                    					<div class="i-title">
+                                         <h3 class="text-white">Starter Timeline</h3></div>
+                    						</div>
+                    					</div>
+                    				-->
+                    <!-------------- END OF STARTER TIMELINE -------------->
+
+                    <!-------------- GETTING STARTED  -------------->
+                    <div class="column-4 cursor" onClick="location.href='lcs_GettingStarted.htm';">
+                        <div id="b1">
+                            <div class="index-icon"></div>
+                            <div class="i-title">
+                                <h3 class="text-white">Getting Started</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <!-------------- END OF GETTING STARTED -------------->
+
+                    <!-------------- WEBINARS -------------->
+                    <div class="column-4 cursor" onClick="location.href='lcs_program_intro.htm';">
+                        <div id="b2">
+                            <div class="index-icon"></div>
+                            <div class="i-title">
+                                <h3 class="text-white">Webinars</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <!-------------- END OF WEBINARS -------------->
+
+                    <!-------------- NEWSLETTERS -------------->
+                    <!--
+                    					<div class="column-4 cursor"  onClick="location.href='lcs_newsletters.htm';">
+                    					<div id="b3">
+                                         <div class="index-icon"></div>
+                    					<div class="i-title">
+                                         <h3 class="text-white">Newsletters</h3></div></div>	
+                                        </div>
+                    					-->
+                    <!-------------- END OF NEWSLETTERS -------------->
+
+                    <!-------------- LEARNING PORTAL -------------->
+                    <div class="column-4 cursor" onClick="window.open('https://learn.oracle.com/ols/user-portal');">
+                        <div id="b4">
+                            <div class="index-icon"></div>
+                            <div class="i-title">
+                                <h3 class="text-white">Learning Portal</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <!-------------- END OF LEARNING PORTAL -------------->
+
+                </div>
+
+            </div>
+            <div class="m-spacer"></div>
+            <p>&nbsp;</p>
+        </div>
+    </div>
+    <script>
+    window.onload = function() {
+        function fade(element, duration) {
+            var start = new Date;
+            (function next() {
+                var time = new Date - start;
+                if (time < duration) {
+                    bgvid.style.opacity = 1 - time / duration;
+                    requestAnimationFrame(next);
+                } else {
+                    bgvid.style.opacity = '0';
+                    document.getElementById('ihead').style.backgroundColor = "transparent";
+
+
+                }
+            })();
+        }
+        document.getElementById("bgvid").onended = function() {
+            fade(this, 2000);
+        };
+    }
+    </script>
+</body>
+</html>

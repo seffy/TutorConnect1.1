@@ -1,0 +1,160 @@
+/* styles.css */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    min-height: 100vh;
+}
+
+.auth-container {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    width: 90%;
+    max-width: 400px;
+    margin: 50px auto;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.error-message {
+    color: red;
+    margin-bottom: 1rem;
+    display: none;
+}
+
+/* Dashboard Styles */
+nav {
+    background: #333;
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav button {
+    width: auto;
+    padding: 0.5rem 1rem;
+}
+
+.dashboard-container {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.teachers-list, .my-slots, .available-slots {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+/* Teacher Status Indicators */
+.teacher-status {
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.online {
+    background: #4CAF50;
+    color: white;
+}
+
+.offline {
+    background: #9e9e9e;
+    color: white;
+}
+
+.error-message {
+    background: #ff5252;
+    color: white;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.success-message {
+    background: #4CAF50;
+    color: white;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.slot-item {
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.slot-item.pending {
+    border-left: 4px solid orange;
+}
+
+.slot-item.accepted {
+    border-left: 4px solid green;
+}
+
+.slot-item.rejected {
+    border-left: 4px solid red;
+}
+
+.slot-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.accept-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.reject-btn {
+    background-color: #f44336;
+    color: white;
+}
+
+.rejection-note {
+    color: #f44336;
+    font-style: italic;
+    margin-top: 5px;
+}

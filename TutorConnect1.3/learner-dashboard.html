@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learner Dashboard</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <nav>
+        <h1>Learner Dashboard</h1>
+        <button id="logout">Logout</button>
+    </nav>
+
+    <div class="dashboard-container">
+        <div class="slot-creation">
+            <h2>Create Slot</h2>
+            <form id="slot-form">
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" required>
+                </div>
+                <button type="submit">Create Slot</button>
+            </form>
+        </div>
+
+        <div class="teachers-list">
+            <h2>Available Teachers</h2>
+            <div id="teachers-container"></div>
+        </div>
+
+        <div class="my-slots">
+            <h2>My Slots</h2>
+            <div id="slots-container"></div>
+        </div>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/learner.js"></script>
+</body>
+
+</html>
