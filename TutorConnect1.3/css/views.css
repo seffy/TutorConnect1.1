@@ -1,0 +1,39 @@
+@charset "UTF-8";
+/* CSS Document */
+
+@media (max-width: 768px) {
+	
+	.login-contaner {
+		width: 100%;
+	}
+	
+	
+	.login-contaner form{
+    height: 520px;
+    width: 400px;
+    background-color: rgba(255,255,255,0.13);
+    position: relative;
+		margin: 10% auto;
+		
+	transform: translate(0,0);
+    top: 0;
+    right: 0;
+    
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 40px rgba(8,7,16,0.6);
+    padding: 50px 35px;
+}
+	
+	.welcome-title {
+display: none;
+}
+	
+	.t-title-mob {
+		display: block;
+	}
+	
+}
+	
+	
