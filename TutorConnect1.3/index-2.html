@@ -35,24 +35,43 @@
 		<div class="t-title">tutorConnect</div>
 	
 	</div>
+		
+		  <div id="error-message" class="error-message"></div>
 	
 	
-    <form>
+<form id="login-form">
 			<div class="t-title-mob">tutorConnect</div>
 		
 		<p align="center">Welcome Back!</p>
         <h3>Login</h3>
 
         <label for="username">Username</label>
-        <input type="text" placeholder="Email or Phone" id="username">
+        <input type="text" id="username" required>
 
         <label for="password">Password</label>
-        <input type="password" placeholder="Password" id="password">
+        <input type="password" id="password" required>
 
-        <button>Log In</button>
+      <button type="submit">Login</button>
         
-    </form>
+	      <div class="toggle-form">
+
+            <p>Don't have an account? <a href="register.html">Sign up</a></p>
+
+        </div>
+
+
+   
 	
+	
+    </form>
+		
+		
+		
+		
+	 <script src="js/config.js"></script>
+
+    <script src="js/auth.js"></script>
+		
 	 <script>
     window.onload = function() {
         function fade(element, duration) {

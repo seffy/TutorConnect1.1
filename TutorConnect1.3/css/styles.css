@@ -5,14 +5,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
 :root {
-  --gray1: #222222;
-  --gray170: #22222270;
-  --gray2: #444444;
-  --gray3: #636363;
-  --gray4: #959595;
-  --gray5: #B3B3B3;
-  --gray6: #E0E0E0;
-  --gray7: #F5F5F5;
+  --grey1: #222222;
+  --grey170: #22222270;
+  --grey2: #444444;
+  --grey3: #636363;
+  --grey4: #959595;
+  --grey5: #B3B3B3;
+  --grey6: #E0E0E0;
+  --grey7: #F5F5F5;
   --skyblue: #D9F6FA;
   --darkblue: #002677;
   --orange: #FF612B;
@@ -114,17 +114,25 @@ video#bgvid {
 .login-contaner form{
     height: 520px;
     width: 400px;
-    background-color: rgba(255,255,255,0.13);
+
     position: absolute;
     transform: translate(-50%,-50%);
     top: 50%;
     right: 5%;
     border-radius: 10px;
     backdrop-filter: blur(10px);
-    border: 2px solid rgba(255,255,255,0.1);
+    background-color: rgba(0,0,0,0.01);
     box-shadow: 0 0 40px rgba(8,7,16,0.6);
     padding: 50px 35px;
+	  transition: 0.3s;
 }
+
+.login-contaner form:hover {
+	 background-color: rgba(0,0,0,0.70);
+}
+
+
+
 .login-contaner form *{
    
     color: #ffffff;
@@ -149,21 +157,21 @@ video#bgvid {
     display: block;
     height: 50px;
     width: 100%;
-    background-color: rgba(255,255,255,0.09);
+    background-color: rgba(255,255,255,0.03);
     border-radius: 3px;
     padding: 0 10px;
     margin-top: 8px;
     font-size: 14px;
     font-weight: 300;
-	border: 1px solid tomato;
+	border: 1px solid darkgray;
 }
 .login-contaner ::placeholder{
-    color: #e5e5e5;
+    color: var(--gray5);
 }
 .login-contaner button{
     margin-top: 50px;
     width: 100%;
-    background-color: var(--darkblue);
+    background-color: #fafafa;
     color: #080710;
     padding: 15px 0;
     font-size: 18px;
@@ -171,6 +179,13 @@ video#bgvid {
     border-radius: 5px;
     cursor: pointer;
 }
+
+.login-contaner button:hover{
+
+    color: #fff;
+   
+}
+
 
 
 
@@ -353,5 +368,5 @@ nav button {
 	font-size: 24px;
 	font-weight: bold;
 	text-align: center;
-	margiin-bottom: 25px;
+	margin-bottom: 25px;
 }
