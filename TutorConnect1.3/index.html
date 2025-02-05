@@ -37,28 +37,7 @@
          </form>
          <script src="js/config.js"></script>
          <script src="js/auth.js"></script>
-         <script>
-            window.onload = function() {
-                function fade(element, duration) {
-                    var start = new Date;
-                    (function next() {
-                        var time = new Date - start;
-                        if (time < duration) {
-                            bgvid.style.opacity = 1 - time / duration;
-                            requestAnimationFrame(next);
-                        } else {
-                            bgvid.style.opacity = '0';
-                            document.getElementById('ihead').style.backgroundColor = "transparent";
-            
-            
-                        }
-                    })();
-                }
-                document.getElementById("bgvid1").onended = function() {
-                    fade(this, 2000);
-                };
-            }
-         </script>
+         
       </div>
    </body>
 </html>
