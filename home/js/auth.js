@@ -53,7 +53,8 @@ document.getElementById('register-form')?.addEventListener('submit', async (e) =
         if (!response.ok) throw new Error(data.error);
 
         alert('Registration successful! Please login.');
-        window.location.href = 'index.html';
+       window.location.href = 'index.html';
+
     } catch (error) {
         errorMessage.style.display = 'block';
         errorMessage.textContent = error.message;

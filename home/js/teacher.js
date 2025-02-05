@@ -89,10 +89,15 @@ async function loadAvailableSlots() {
 function displaySlots(slots) {
     const container = document.getElementById('slots-container');
     container.innerHTML = slots.map(slot => `
-        <div class="slot-item">
-            <p>Subject: ${slot.subject}</p>
-            <p>Learner: ${slot.learner_name}</p>
-            <p>Status: ${slot.slot_status}</p>
+        <div class="request-card">
+        <div class="ineedhelp-msg">${slot.subject}</div>
+			<div class="profile">
+
+              <img src="img/person2.png" alt="Profile Picture">
+            <div class="tutorname"><span>${slot.learner_name}</span><div class="verified"></div>
+              <div class="messagedetails">
+
+ <p>Status: ${slot.slot_status}</p>
             ${slot.slot_status === 'pending' ? `
                 <div class="slot-actions">
                     <button onclick="handleAccept(${slot.id})">Accept</button>
@@ -103,10 +108,18 @@ function displaySlots(slots) {
                     </div>
                 </div>
             ` : ''}
+          
+				 
+			  </div> </div>
+          </div>
+          <div class="meetingcode">
             ${slot.slot_status === 'accepted' ? `
-                <p>Meeting Code: ${slot.meeting_code || 'Not set'}</p>
+                <p>Meeting Code:</p>
+                <p class="meetingcodecode">${slot.meeting_code || 'Not set'}</p>
             ` : ''}
-        </div>
+          </div>
+
+  	</div>
     `).join('');
 }
 

@@ -30,11 +30,11 @@ TutorConnect is a platform designed to connect students who need academic assist
    ```
 2. Navigate to the project directory:
    ```bash
-   cd TutorConnect
+   cd backend
    ```
 3. Install dependencies:
    ```bash
-   npm install
+   npm install bcrypt cors dotenv express jsonwebtoken nodemon sqlite3 ws
    ```
 
 ### Running the Application
@@ -42,7 +42,7 @@ TutorConnect is a platform designed to connect students who need academic assist
    ```bash
    npm start
    ```
-2. Access the application in your browser at `http://localhost:3000`.
+2. Go to 'home' folder and right click 'index.html' via Live Server.
 
 ---
 
@@ -51,7 +51,7 @@ TutorConnect is a platform designed to connect students who need academic assist
 - **Frontend**: HTML5, CSS3
 - **Backend**: Node.js, Express.js
 - **Real-Time Updates**: Socket.IO
-- **Database**: MongoDB
+- **Database**: SQLLite
 - **Hosting**: (To be determined)
 
 ---

@@ -63,16 +63,19 @@ function updateTeachersList(teachers) {
     if (!container) return;
 
     container.innerHTML = teachers.map(teacher => `
-        <div class="teacher-item">
-            <span>${teacher.username}</span>
-            <span class="teacher-status ${teacher.is_online ? 'online' : 'offline'}">
-                ${teacher.is_online ? 'Online' : 'Offline'}
-            </span>
-            ${!teacher.is_online && teacher.last_seen ? 
+    <div class="request-card">
+			<div class="profile">
+              <img src="img/person2.png" alt="Profile Picture">
+            <div class="tutorname"><span>${teacher.username}</span><div class="verified"></div>
+              <div class="messagedetails">
+				  <p><strong>Status:</strong><span class="teacher-status ${teacher.is_online ? 'online' : 'offline'}"></p>
+				   ${!teacher.is_online && teacher.last_seen ? 
                 `<span class="last-seen">Last seen: ${new Date(teacher.last_seen).toLocaleString()}</span>` 
                 : ''
             }
-        </div>
+			  </div> </div>
+          </div>
+  	</div>
     `).join('');
 }
 
@@ -104,7 +107,7 @@ function displaySlots(slots) {
         }
 
         container.innerHTML = slots.map(slot => `
-            <div class="slot-item ${slot.status.toLowerCase()}">
+               <div class="slot-item ${slot.status.toLowerCase()}">
                 <p>Subject: ${slot.subject}</p>
                 <p>Status: ${slot.status}</p>
                 ${slot.teacher_name ? `<p>Teacher: ${slot.teacher_name}</p>` : ''}
@@ -117,6 +120,7 @@ function displaySlots(slots) {
                     ''
                 }
             </div>
+
         `).join('');
     } catch (error) {
         console.error('Error displaying slots:', error);
