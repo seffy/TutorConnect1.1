@@ -14,7 +14,7 @@
   --grey6: #E0E0E0;
   --grey7: #F5F5F5;
   --skyblue: #D9F6FA;
-  --darkblue: #002677;
+  --darkblue: #00072D;
   --orange: #FF612B;
   --warmwhite: #FBF9F4;
   --textcolor: #5a5b5b;
@@ -39,7 +39,7 @@ body{
   height: 100vh;
   color: #5a5b5b;
 	      min-height: 100vh;
-          background-color: #444444;
+          background-color: var(--darkblue);
 	
 }
 
@@ -178,9 +178,18 @@ video#bgvid {
 		display: none;
 	}
 
+#login-form{
+	    background-color: rgba(0,0,0,0.01);
+}
+#login-form:hover{
+	    	background-color: var(--darkblue);
+	color: #333;
+}
 
 
-.login-contaner form{
+
+
+.login-container form{
     min-height: 500px;
     width: 400px;
 
@@ -190,43 +199,42 @@ video#bgvid {
     right: 5%;
     border-radius: 10px;
     backdrop-filter: blur(10px);
-    background-color: rgba(0,0,0,0.01);
+
     box-shadow: 0 0 40px rgba(8,7,16,0.6);
     padding: 40px 35px;
 	  transition: 0.3s;
 }
 
-.login-contaner form:hover {
+.login-container form:hover {
 	 /* background-color: rgba(0,0,0,0.70);*/
 	
-		background-color: var(--darkblue);
-	color: #333;
+	
 	
 }
 
 
 
-.login-contaner form *{
+.login-container form *{
    
     color: #ffffff;
     letter-spacing: 0.5px;
     outline: none;
     border: none;
 }
-.login-contaner form h3{
+.login-container form h3{
     font-size: 32px;
     font-weight: 500;
     line-height: 42px;
     text-align: center;
 }
 
-.login-contaner label{
+.login-container label{
     display: block;
     margin-top: 30px;
     font-size: 16px;
     font-weight: 500;
 }
-.login-contaner input{
+.login-container input{
     display: block;
     height: 50px;
     width: 100%;
@@ -238,10 +246,10 @@ video#bgvid {
     font-weight: 300;
 	border: 1px solid darkgray;
 }
-.login-contaner ::placeholder{
+.login-container ::placeholder{
     color: var(--gray5);
 }
-.login-contaner button{
+.login-container button{
     margin-top: 50px;
     width: 100%;
     background-color: #fafafa;
@@ -257,7 +265,7 @@ video#bgvid {
 
 
 
-.login-contaner button:hover{
+.login-container button:hover{
 
     color: #fff;
    
