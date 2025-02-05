@@ -39,6 +39,7 @@ body{
   height: 100vh;
   color: #5a5b5b;
 	      min-height: 100vh;
+          background-color: #444444;
 	
 }
 
@@ -79,35 +80,35 @@ body{
   background-color: #FBF9F4;
 }
 
-.bg-gray1 {
+.bg-grey1 {
   background-color: var(--gray1, #222222);
 }
 
-.bg-gray170 {
+.bg-grey170 {
   background-color: var(--gray170, #22222270);
 }
 
-.bg-gray2 {
+.bg-grey2 {
   background-color: var(--gray2, #444444);
 }
 
-.bg-gray3 {
+.bg-grey3 {
   background-color: var(--gray3, #636363);
 }
 
-.bg-gray4 {
+.bg-grey4 {
   background-color: var(--gray4, #959595);
 }
 
-.bg-gray5 {
+.bg-grey5 {
   background-color: var(--gray5, #B3B3B3);
 }
 
-.bg-gray6 {
+.bg-grey6 {
   background-color: var(--gray6, #E0E0E0);
 }
 
-.bg-gray7 {
+.bg-grey7 {
   background-color: var(--gray7, #F5F5F5);
 }
 

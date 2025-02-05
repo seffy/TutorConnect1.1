@@ -8,9 +8,9 @@
       <style media="screen">
       </style>
    </head>
-   <body>
+   <body class="bg-grey1">
       <div class="login-contaner">
-         <video playsinline autoplay muted id="bgvid" style="opacity: .9; z-index: -50; " onended="myFunction()">
+         <video playsinline autoplay muted id="bgvid" style=" z-index: -50;">
             <source src="video/video.mp4" type="video/mp4">
          </video>
          <!-- <div class="background">
@@ -37,28 +37,7 @@
          </form>
          <script src="js/config.js"></script>
          <script src="js/auth.js"></script>
-         <script>
-            window.onload = function() {
-                function fade(element, duration) {
-                    var start = new Date;
-                    (function next() {
-                        var time = new Date - start;
-                        if (time < duration) {
-                            bgvid.style.opacity = 1 - time / duration;
-                            requestAnimationFrame(next);
-                        } else {
-                            bgvid.style.opacity = '0';
-                            document.getElementById('ihead').style.backgroundColor = "transparent";
-            
-            
-                        }
-                    })();
-                }
-                document.getElementById("bgvid1").onended = function() {
-                    fade(this, 2000);
-                };
-            }
-         </script>
+        
       </div>
    </body>
 </html>
