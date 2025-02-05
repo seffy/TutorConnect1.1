@@ -61,6 +61,17 @@ body{
 	background-blend-mode: overlay;
 	
 }
+
+.bg-2 {
+
+  background-image: url('../img/1.jpg');
+  background-position: center right;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+	background-color: var(--darkblue);
+}
+
 		
 	
 .bg-sky {
@@ -527,3 +538,11 @@ nav button {
 		
 		
 	
+
+.feat {
+	color: #fff;
+	margin: 20px;
+	position: absolute;
+	bottom: 50px;
+	left: 50px;
+}
