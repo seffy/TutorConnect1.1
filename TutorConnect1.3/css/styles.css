@@ -47,6 +47,11 @@ body{
 	background-color: var(--skyblue);
 }
 
+.bg-darkgray {
+	background-color: #070707;
+}
+
+
 .bg-color-grey1 {
 	background-color: var(--grey1);
 }
@@ -68,6 +73,7 @@ body{
   background-position: center right;
   background-size: cover;
   background-repeat: no-repeat;
+
 
 	background-color: var(--darkblue);
 }
@@ -320,7 +326,7 @@ video#bgvid {
     margin-bottom: 0.5rem;
 }
 
-.form-group input, .form-group select {
+.form-group input{
    /* width: 100%;
     padding: 0.5rem;
     border: 1px solid #ddd;
@@ -338,21 +344,31 @@ video#bgvid {
     font-weight: 300;
 	border: 1px solid #fff;
 	
-	
-	
 }
 
 
-#role option {
-	 font-size: 16px;
-
+.form-group select {
+   /* width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px; */
 	
-}
-select option.optionvalues {
+	
+	display: block;
+    height: 50px;
+    width: 100%;
+ 	color: #333;
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 8px;
     font-size: 16px;
-    padding: 5px;
-    background: #5c5c5c;
+    font-weight: bold;
+	border: 1px solid #fff;
+	
 }
+
+
+
 
 
 
@@ -546,4 +562,8 @@ nav button {
 	position: absolute;
 	bottom: 50px;
 	left: 50px;
+}
+
+.hide {
+	display: none;
 }
