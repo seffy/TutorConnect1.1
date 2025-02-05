@@ -63,7 +63,6 @@ body{
 }
 		
 	
-
 .bg-sky {
   background-color: var(--skyblue, #D9F6FA);
 }
@@ -111,7 +110,6 @@ body{
 .bg-grey7 {
   background-color: var(--gray7, #F5F5F5);
 }
-
 .text-color {
   color: #5a5b5b;
 }
