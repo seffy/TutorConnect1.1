@@ -205,6 +205,12 @@ video#bgvid {
 }
 
 
+.glass {
+
+	    background-color: rgba(255,255,255,0.5);
+	 backdrop-filter: blur(2px);
+}
+
 
 
 .login-container form{
@@ -260,7 +266,7 @@ video#bgvid {
     border-radius: 3px;
     padding: 0 10px;
     margin-top: 8px;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 300;
 	border: 1px solid darkgray;
 }
@@ -288,12 +294,6 @@ video#bgvid {
     color: #fff;
    
 }
-
-
-
-
-
-
 
 
 .auth-container h2 {
@@ -340,7 +340,7 @@ video#bgvid {
     border-radius: 3px;
     padding: 0 10px;
     margin-top: 8px;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 300;
 	border: 1px solid #fff;
 	
@@ -513,10 +513,14 @@ nav button {
 }
 
 .t-title {
+	margin-top: -20px;
 	 font-size: 5em;
 	color: #fff;
 	font-size-adjust: auto;
 	font-weight: bold;
+	      text-shadow: 4px 4px 20px rgba(0, 0, 0, 1);
+
+
 }
 
 .t-title-mob {
@@ -535,11 +539,11 @@ nav button {
       display: flex;
       flex-wrap: wrap;
       margin: 20px;
-      gap: 20px;
+      gap: 10px;
     }
     .column {
       flex: 1 1 calc(50% - 20px); /* Two columns with 20px gap */
-      background-color: #f0f8ff;
+  
       padding: 20px;
       border-radius: 10px;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -566,4 +570,8 @@ nav button {
 
 .hide {
 	display: none;
+}
+
+.posttile {
+	margin-bottom: 15px;
 }
