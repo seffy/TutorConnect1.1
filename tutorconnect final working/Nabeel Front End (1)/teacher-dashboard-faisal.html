@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Dashboard</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="bg-grey1 bg-1">
+    <nav class="bg-darkblue">
+        <h1>Teacher Dashboard</h1>
+        <button id="logout">Logout</button>
+    </nav>
+
+    <div class="dashboard-container ">
+        <div class="slot-creation ">
+        
+            <form id="slot-form">
+                <div class="form-group">
+                    <div class="colcontainer ">
+                        <div class="column glass">
+							    <h2>Create Tutoring Slot</h2>
+                            <label for="subject"><strong>Subject:</strong></label>
+                            <input type="text" placeholder="Enter subject" id="subject" required>
+                            <label for="time"><strong>Time:</strong></label>
+                            <input type="time" id="time" required>
+                            <p>&nbsp;</p>
+                            <button type="submit">Create Slot</button>
+                        </div>
+                        <div class="column glass">
+							 <h2>My Slots</h2>
+                            <div class="my-slots">
+                               
+                                <div id="slots-container"></div>
+                            </div>
+							
+					
+							
+                        </div>
+						
+								  <div class="column glass">
+						  
+						    <h2>Available Learners</h2>
+		    <div class="learners-list">
+            <div id="learners-container"></div>
+        </div>
+					  
+					  </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    
+    </div>
+
+ <script src="js/config.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/teacher.js"></script> 
+</body>
+
+</html>

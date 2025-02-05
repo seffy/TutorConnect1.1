@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Learner Dashboard</title>
+   <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="bg-grey5 bg-2">
+   <nav class="bg-darkblue">
+      <h1>Learner Dashboard</h1>
+      <button id="logout">Logout</button>
+   </nav>
+   <div class="dashboard-container">
+      <div class="slot-creation">
+         <h1 class="text-color-w">Hello!</h1>
+         <form id="slot-form">
+            <div class="form-group">
+               <div class="colcontainer">
+                  <div class="column glass">
+                     <h2 class="posttile">Post Tutoring Request</h2>
+                     <label for="subject">What subject(s) do you need help with:</label>
+                     <input type="text" placeholder="Enter subject" id="subject" required>
+                     <p>&nbsp;</p>
+                     <button type="submit">Submit</button>
+                  </div>
+                  <div class="column glass">
+                     <h2>My Requests</h2>
+                     <div class="my-slots">
+
+                        <div id="slots-container">You current have 0 requests.</div>
+                     </div>
+                  </div>
+
+                  <div class="column glass">
+
+                     <h2>Available Tutors</h2>
+                     <div class="teachers-list">
+
+                        <div id="teachers-container">Interested Tutors will show here...</div>
+                     </div>
+
+                  </div>
+
+               </div>
+            </div>
+         </form>
+      </div>
+
+
+
+   </div>
+   <script src="js/config.js"></script>
+   <script src="js/auth.js"></script>
+   <script src="js/learner.js"></script>
+</body>
+
+</html>
