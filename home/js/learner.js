@@ -210,7 +210,7 @@ function displaySlots(slots) {
 
 function joinVideoCall(meetingCode) {
     localStorage.setItem('meetingCode', meetingCode);
-    window.open('/video-chat.html', '_blank');
+    window.open('/home/video-chat.html', '_blank');
 }
 
 // Create new slot
