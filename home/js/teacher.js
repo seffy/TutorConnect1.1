@@ -101,20 +101,32 @@ function displaySlots(slots) {
            
 			  </div> </div>
           </div>
-            <div>
+
+
+
+<div class="accept-reject">
  ${slot.slot_status === 'pending' ? `
-                <div class="slot-actions">
+                <div class="slot-actions-1">
+                    <div class="action-btns">
                     <button class="" onclick="handleAccept(${slot.id})">Accept</button>
+                    </div> 
+               
+                    <div class="action-btns">
                     <button class="bg-grey2" onclick="rejectSlot(${slot.id})">Reject</button>
+                    </div>
+ <div class="action-btns">
                     <div id="code-input-${slot.id}" style="display: none; margin-top: 10px;">
                         <input type="text" placeholder="Paste meeting code" id="meeting-code-${slot.id}">
-                        <button onclick="submitCode(${slot.id})">Submit Code</button>
+                        <button class="bg-orange" onclick="submitCode(${slot.id})">Submit Code</button>
                     </div>
-                </div>
-            ` : ''}
-          
-				 
-            </div>
+                      </div>
+       
+                </div>` : ''}
+                
+        </div>
+
+
+
 
 
           <div class="meetingcode">
@@ -124,6 +136,9 @@ function displaySlots(slots) {
             ` : ''}
           </div>
 
+
+
+
   	</div>
     `).join('');
 }
@@ -132,7 +147,7 @@ function displaySlots(slots) {
 
 function handleAccept(slotId) {
     // First open video chat in new tab
-    window.open('/video-chat.html', '_blank');
+    window.open('/home/video-chat.html', '_blank');
     
     // Show code input field
     document.getElementById(`code-input-${slotId}`).style.display = 'block';
@@ -171,7 +186,7 @@ async function submitCode(slotId) {
 
 function joinVideoCall(meetingCode) {
     localStorage.setItem('meetingCode', meetingCode);
-    window.open('/video-chat.html', '_blank');
+    window.open('/home/video-chat.html', '_blank');
 }
 
 // Accept slot
@@ -213,7 +228,7 @@ async function rejectSlot(slotId) {
 }
 
 // Initialize
-connectWebSocket();
+//connectWebSocket();
 loadAvailableSlots();
 
 // Refresh slots periodically

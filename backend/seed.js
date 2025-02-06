@@ -3,12 +3,12 @@ const { db, initializeDatabase } = require('./config/database');
 
 const users = [
     {
-        username: 'Tutor-Mike',
+        username: 'teacher1',
         password: 'teacher123',
         role: 'teacher'
     },
     {
-        username: 'Tutor-Jessica',
+        username: 'Tutor-Mike',
         password: 'teacher123',
         role: 'teacher'
     },

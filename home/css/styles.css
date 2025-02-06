@@ -788,3 +788,40 @@ cursor: pointer;
   width: 100%;
 
 }
+
+.accept-reject {
+  margin-top: 10px;
+  width: 100%;
+  display: block;
+
+}
+.slot-actions-1 button {
+display: block;
+width: 100%;
+margin-top: 5px;
+
+}
+
+
+.slot-actions-1 input{
+  display: block;
+  height: 50px;
+  width: 100%;
+  background-color: rgba(255,255,255,0.03);
+  border-radius: 3px;
+  padding: 0 10px;
+  margin-top: 8px;
+  font-size: 16px;
+  font-weight: 300;
+border: 1px solid darkgray;
+}
+.slot-actions-1 ::placeholder{
+  color: var(--gray5);
+}
+
+
+.action-btns {
+  width: 100%;
+  display: block;
+
+}
