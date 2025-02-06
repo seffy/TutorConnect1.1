@@ -98,10 +98,14 @@ function displaySlots(slots) {
               <div class="messagedetails">
 
  <p>Status: ${slot.slot_status}</p>
-            ${slot.slot_status === 'pending' ? `
+           
+			  </div> </div>
+          </div>
+            <div>
+ ${slot.slot_status === 'pending' ? `
                 <div class="slot-actions">
-                    <button onclick="handleAccept(${slot.id})">Accept</button>
-                    <button onclick="rejectSlot(${slot.id})">Reject</button>
+                    <button class="" onclick="handleAccept(${slot.id})">Accept</button>
+                    <button class="bg-grey2" onclick="rejectSlot(${slot.id})">Reject</button>
                     <div id="code-input-${slot.id}" style="display: none; margin-top: 10px;">
                         <input type="text" placeholder="Paste meeting code" id="meeting-code-${slot.id}">
                         <button onclick="submitCode(${slot.id})">Submit Code</button>
@@ -110,8 +114,9 @@ function displaySlots(slots) {
             ` : ''}
           
 				 
-			  </div> </div>
-          </div>
+            </div>
+
+
           <div class="meetingcode">
             ${slot.slot_status === 'accepted' ? `
                 <p>Meeting Code:</p>

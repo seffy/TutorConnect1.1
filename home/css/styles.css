@@ -615,7 +615,6 @@ nav button {
 .student-card {
   background-color: #fff;
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   width: calc(25% - 20px);
   /* 3 cards per row with spacing */
   min-width: 300px;
@@ -635,7 +634,7 @@ nav button {
   /* Align items to the left */
   padding: 20px;
 }
-.request-card, .session-card {
+.request-card {
   background-color: #fff;
   border-radius: 10px;
   min-width: 250px;
@@ -649,6 +648,35 @@ nav button {
   margin: 5px;
 }
 
+
+.session-card {
+  background-color: #fff;
+  border-radius: 10px;
+  width: 100%;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+
+}
+
+.session-card button {
+padding: 8px;
+font-size: 14px;
+margin-top: 10px;
+width: 120px;
+background-color: var(--grey2);
+cursor: pointer;
+
+}
+
+.ptrbutton {
+
+  font-size: 14px;
+  margin-top: 10px;
+
+  cursor: pointer;
+
+}
 .request-card .message {
   margin-bottom: 10px;
 }
@@ -674,6 +702,11 @@ nav button {
 
 .requestdetails {
   font-size: 15px; 
+}
+
+.req-status {
+  font-size: 15px; 
+  margin: 10px 0;
 }
 
 .ineedhelp-msg {
@@ -742,4 +775,16 @@ nav button {
   text-align: center;
   font-weight: 600;
 }
-   
+ 
+.text-align-right {
+  text-align: right;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.action-row {
+  width: 100%;
+
+}

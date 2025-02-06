@@ -68,14 +68,19 @@ function updateTeachersList(teachers) {
               <img src="img/person2.png" alt="Profile Picture">
             <div class="tutorname"><span>${teacher.username}</span><div class="verified"></div>
               <div class="messagedetails">
-				  <p><strong>Status:</strong><span class="teacher-status ${teacher.is_online ? 'online' : 'offline'}"></p>
-				   ${!teacher.is_online && teacher.last_seen ? 
+ <span class="teacher-status ${teacher.is_online ? 'online' : 'offline'}">
+                ${teacher.is_online ? 'Online' : 'Offline'}
+            </span>
+            ${!teacher.is_online && teacher.last_seen ? 
                 `<span class="last-seen">Last seen: ${new Date(teacher.last_seen).toLocaleString()}</span>` 
                 : ''
             }
 			  </div> </div>
           </div>
   	</div>
+
+
+
     `).join('');
 }
 
@@ -107,9 +112,10 @@ function displaySlots(slots) {
         }
 
         container.innerHTML = slots.map(slot => `
+            <div class="session-card">
                <div class="slot-item ${slot.status.toLowerCase()}">
-                <p>Subject: ${slot.subject}</p>
-                <p>Status: ${slot.status}</p>
+                <p class="subject">Subject: ${slot.subject}</p>
+                <div class="req-status">Status: ${slot.status}</p>
                 ${slot.teacher_name ? `<p>Teacher: ${slot.teacher_name}</p>` : ''}
                 ${slot.status === 'pending' ? 
                     `<button onclick="deleteSlot(${slot.id})">Delete</button>` : 
@@ -119,6 +125,7 @@ function displaySlots(slots) {
                     `<p class="rejection-note">This slot has been rejected</p>` : 
                     ''
                 }
+             </div>
             </div>
 
         `).join('');
@@ -170,6 +177,7 @@ function displaySlots(slots) {
         }
 
         container.innerHTML = slots.map(slot => `
+              <div class="session-card">
             <div class="slot-item ${slot.status.toLowerCase()}">
                 <p>Subject: ${slot.subject}</p>
                 <p>Status: ${slot.status}</p>
@@ -183,7 +191,7 @@ function displaySlots(slots) {
                     `<button onclick="deleteSlot(${slot.id})">Delete</button>` 
                     : ''
                 }
-            </div>
+            </div></div>
         `).join('');
     } catch (error) {
         console.error('Error displaying slots:', error);
