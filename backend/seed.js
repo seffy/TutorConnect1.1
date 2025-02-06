@@ -3,22 +3,22 @@ const { db, initializeDatabase } = require('./config/database');
 
 const users = [
     {
-        username: 'teacher1',
+        username: 'Tutor-Mike',
         password: 'teacher123',
         role: 'teacher'
     },
     {
-        username: 'teacher2',
+        username: 'Tutor-Jessica',
         password: 'teacher123',
         role: 'teacher'
     },
     {
-        username: 'student1',
+        username: 'LuisLuit',
         password: 'student123',
         role: 'learner'
     },
     {
-        username: 'student2',
+        username: 'HarveySpecter',
         password: 'student123',
         role: 'learner'
     }
