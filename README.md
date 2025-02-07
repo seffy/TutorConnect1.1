@@ -20,13 +20,11 @@ TutorConnect is a platform designed to connect students who need academic assist
 For TutorConnect, there are two main Docker containers:
 
 1.	Frontend Container (josephjhonsabana/tutor_connect_frontend)
-https://hub.docker.com/repository/docker/josephjhonsabana/tutor_connect_frontend
 - Runs on port 3000
 - Handles the user interface and all client-side interactions
 - Sends requests to the backend to fetch or update data
 
 2.	Backend Container. (josephjhonsabana/tutor_connect_backend)
-https://hub.docker.com/repository/docker/josephjhonsabana/tutor_connect_backend
 
 - Runs on port 8000.
 - Manages data processing, business logic, and API requests
