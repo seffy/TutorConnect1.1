@@ -101,9 +101,6 @@ function displaySlots(slots) {
            
 			  </div> </div>
           </div>
-
-
-
 <div class="accept-reject">
  ${slot.slot_status === 'pending' ? `
                 <div class="slot-actions-1">
