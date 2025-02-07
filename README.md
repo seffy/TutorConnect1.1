@@ -10,18 +10,40 @@ TutorConnect is a platform designed to connect students who need academic assist
 
 - **Real-Time Tutor Matching**: Students can find available peer tutors in real-time.
 - **Post Requests**: Students can post requests for specific subjects or topics.
-- **Offer Tutoring Services**: Peer tutors can create profiles and advertise their expertise.
+- **Accept or Reject Tutoring Request**: Peer tutors can create accept or reject tutoring service.
 - **Messaging System**: Secure and private communication between students and tutors.
 - **User-Friendly Interface**: Intuitive design to make navigation seamless.
 
 ---
-
 ## Getting Started
 
+For TutorConnect, there are two main Docker containers:
+
+1.	Frontend Container (josephjhonsabana/tutor_connect_frontend)
+https://hub.docker.com/repository/docker/josephjhonsabana/tutor_connect_frontend
+- Runs on port 3000
+- Handles the user interface and all client-side interactions
+- Sends requests to the backend to fetch or update data
+
+2.	Backend Container. (josephjhonsabana/tutor_connect_backend)
+https://hub.docker.com/repository/docker/josephjhonsabana/tutor_connect_backend
+
+- Runs on port 8000.
+- Manages data processing, business logic, and API requests
+- Uses an SQLite database for data storage
+
+How These Containers Work Together
+•	The frontend container communicates with the backend container via API requests.
+•	The backend container interacts with an SQLite database, which is lightweight and does not require a separate database server.
+
+
 ### Prerequisites
-- **Node.js**: Ensure Node.js is installed on your system.
-- **Socket.IO**: For real-time updates.
-- **Database**: MongoDB.
+- **Database**: SQLite (Managed via DB Browser for SQLite)
+- **Backend**: Node.js with Express.js
+- **Security**: JWT Authentication & Bcrypt for password encryption
+- **Middleware**: CORS for cross-origin access control
+
+
 
 ### Installation
 1. Clone the repository:
@@ -34,7 +56,7 @@ TutorConnect is a platform designed to connect students who need academic assist
    ```
 3. Install dependencies:
    ```bash
-   npm install bcrypt cors dotenv express jsonwebtoken nodemon sqlite3 ws
+   npm install
    ```
 
 ### Running the Application
@@ -42,7 +64,6 @@ TutorConnect is a platform designed to connect students who need academic assist
    ```bash
    npm start
    ```
-2. Go to 'home' folder and right click 'index.html' via Live Server.
 
 ---
 
